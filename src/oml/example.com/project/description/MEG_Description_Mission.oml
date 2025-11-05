@@ -1,0 +1,370 @@
+description <http://example.com/project/description/MEG_Description_Mission#> as meg_desc_mission {
+	uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+	uses <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission
+	uses <http://uaontologies.com/UA_Core/UA_Event#> as event
+	uses <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
+	uses <http://uaontologies.com/UA_Core/UA_Information#> as info
+	
+	//Star wars example
+	//Mission instance - attackMission
+	instance attackMission : meg_mission:Mission [
+        foundation:contains attackExecutionPhase	
+        foundation:contains attackPlanningPhase	
+    	foundation:contains planetaryInvasion
+    ]
+    
+    //Mission Phase instance
+    instance attackExecutionPhase : meg_mission:MissionPhase [
+        foundation:isContainedIn attackMission
+    ]
+    
+    instance attackPlanningPhase : meg_mission:MissionPhase [
+        foundation:isContainedIn attackMission
+    ]
+    
+    //Mission Scenario instance
+    instance planetaryInvasion : meg_mission:MissionScenario [
+    	foundation:contains groundAttack 
+    	foundation:contains airAttack	
+    	foundation:isContainedIn attackMission
+    ]
+    
+    //Mission Vignette instance
+    instance groundAttack : meg_mission:MissionVignette [
+    	foundation:isContainedIn planetaryInvasion
+    ]
+    
+    instance airAttack : meg_mission:MissionVignette [
+    	foundation:isContainedIn planetaryInvasion
+    ]
+    
+    //Independent Continuant
+    instance operationalPerformer1 : meg_mission:OperationalPerformer
+    
+    instance operationalPerformer2 : meg_mission:OperationalPerformer
+    
+    instance operationalPerformer3 : meg_mission:OperationalPerformer
+    
+    //Mission Engineering Thread instance
+   
+    instance destroyKeyRebelHothDefenses : meg_mission:MissionEngineeringThread[
+    	foundation:specificallyDependentOn operationalPerformer1
+    	event:manifestsIn attackPrimaryObjective
+	    foundation:contains bombardRebelBase
+	    foundation:contains invadeRebelBase
+	    foundation:contains captureRebelLeaders
+	    foundation:contains preventRebelEscape
+	    foundation:contains destroyShieldGenerators
+	    meg_mission:defines attackExecutionPhase
+    ]
+    
+    //Mission Thread instance
+    instance attackPrimaryObjective : meg_mission:MissionThread[
+    	event:isManifestationOf destroyKeyRebelHothDefenses
+	    foundation:contains capturingRebelLeaders
+	    foundation:contains destroyingFleeingShips
+	    foundation:contains destroyingPrimaryOjective
+	    req:satisfies destroyRebelDefenses
+    ]
+    
+    //Mission Function instance
+    instance bombardRebelBase : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn capturingRebelLeaders
+	    foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance invadeRebelBase : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn capturingRebelLeaders
+	    foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance captureRebelLeaders : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn capturingRebelLeaders
+	    foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance preventRebelEscape : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn destroyingFleeingShips
+	    foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance destroyShieldGenerators : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn destroyingPrimaryOjective
+	    foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    //Mission Task instance
+    instance capturingRebelLeaders : meg_mission:MissionTask[
+    	event:isManifestationOf bombardRebelBase
+	    foundation:isContainedIn attackPrimaryObjective
+	    req:satisfies destroyBaseForceShield
+	    req:satisfies destroyBaseWeapons
+    ]
+    
+    instance destroyingFleeingShips : meg_mission:MissionTask[
+    	event:isManifestationOf preventRebelEscape
+	    foundation:isContainedIn attackPrimaryObjective
+	    req:satisfies destroyBaseForceShield
+	    req:satisfies destroyBaseWeapons
+    ]
+    
+    instance destroyingPrimaryOjective : meg_mission:MissionTask[
+    	event:isManifestationOf destroyShieldGenerators
+	    foundation:isContainedIn attackPrimaryObjective
+	    req:satisfies destroyBaseForceShield
+	    req:satisfies destroyBaseWeapons
+    ]
+    
+    //Mission Goal instance
+    instance destroyRebelDefenses : meg_mission:MissionGoal[
+    	req:derivesRequirement destroyBaseForceShield 
+    	req:derivesRequirement destroyBaseWeapons
+ //   	info:isAbout attackMission
+    	info:prescribes attackMission
+    ]
+    
+    //Mission Objective instance
+	instance destroyBaseForceShield : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom destroyRebelDefenses
+//    	info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+   ]
+    
+    instance destroyBaseWeapons : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom destroyRebelDefenses
+//    	info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+    ]
+    
+    //Conditions    
+    instance lifeSupportablePlanet : meg_mission:ScenarioCondition[
+    	foundation:specificallyDependentOn operationalPerformer3
+    	meg_mission:isConditionOf planetaryInvasion
+    ]
+    
+    instance hostileTerritory : meg_mission:VignetteCondition[
+    	foundation:specificallyDependentOn operationalPerformer3
+    	meg_mission:isConditionOf groundAttack
+    	meg_mission:isConditionOf airAttack
+    ]
+    
+    
+    //Mission instance - scoutMission
+	instance scoutMission : meg_mission:Mission [
+        foundation:contains scoutExecutionPhase	
+        foundation:contains scoutPlanningPhase	
+    	foundation:contains planetaryInvasion
+    ]
+    
+    //Mission Phase instance
+    instance scoutExecutionPhase : meg_mission:MissionPhase [
+        foundation:isContainedIn scoutMission
+    ]
+    
+    instance scoutPlanningPhase : meg_mission:MissionPhase [
+        foundation:isContainedIn scoutMission
+    ]
+    
+    //Mission Engineering Thread instance
+   
+    instance scoutHothSurfaces : meg_mission:MissionEngineeringThread[
+    	foundation:specificallyDependentOn operationalPerformer1
+    	event:manifestsIn scoutPlanet
+	    foundation:contains deployScoutDroids
+	    foundation:contains exploreHothSurface
+	    foundation:contains identifyRebelStructuresAndForces
+	    foundation:contains reportFindings
+	    meg_mission:defines scoutExecutionPhase
+    ]
+    
+    //Mission Thread instance
+    instance scoutPlanet : meg_mission:MissionThread[
+    	event:isManifestationOf scoutHothSurfaces
+	    foundation:contains launchingScoutUnits
+	    foundation:contains scoutingDefenseCapabilities
+	    foundation:contains reportingFindings
+	    req:satisfies identifyRebelBaseLocation
+	    req:satisfies identifyRebelBaseDefensiveCapabilities
+    ]
+    
+    //Mission Function instance
+    instance deployScoutDroids : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn launchingScoutUnits
+	    foundation:isContainedIn scoutHothSurfaces
+    ]
+    
+    instance exploreHothSurface : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn scoutingDefenseCapabilities
+	    foundation:isContainedIn scoutHothSurfaces
+    ]
+    
+    instance identifyRebelStructuresAndForces : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn scoutingDefenseCapabilities
+	    foundation:isContainedIn scoutHothSurfaces
+    ]
+    
+    instance reportFindings : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	event:manifestsIn reportingFindings
+	    foundation:isContainedIn scoutHothSurfaces
+    ]
+    
+    //Mission Task instance
+    instance launchingScoutUnits : meg_mission:MissionTask[
+    	event:isManifestationOf deployScoutDroids
+	    foundation:isContainedIn scoutPlanet
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
+    ]
+    
+    instance scoutingDefenseCapabilities : meg_mission:MissionTask[
+    	event:isManifestationOf exploreHothSurface
+    	event:isManifestationOf identifyRebelStructuresAndForces
+	    foundation:isContainedIn scoutPlanet
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
+    ]
+    
+    instance reportingFindings : meg_mission:MissionTask[
+    	event:isManifestationOf reportFindings
+	    foundation:isContainedIn scoutPlanet
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
+    ]
+    
+    //Mission Goal instance
+    instance identifyRebelBaseLocation : meg_mission:MissionGoal[
+    	req:derivesRequirement identifyBaseForceShield //Update this
+    	req:derivesRequirement identifyBaseWeapons		//Update this
+ //   	info:isAbout attackMission
+    	info:prescribes scoutMission
+    ]
+    
+    instance identifyRebelBaseDefensiveCapabilities : meg_mission:MissionGoal[
+    	req:derivesRequirement identifyBaseForceShield 
+    	req:derivesRequirement identifyBaseWeapons
+ //   	info:isAbout attackMission
+    	info:prescribes scoutMission
+    ]
+    
+    //Mission Objective instance
+	instance identifyBaseForceShield : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom identifyRebelBaseDefensiveCapabilities
+//    	info:isAbout executionPhase
+    	info:prescribes scoutExecutionPhase
+   ]
+    
+    instance identifyBaseWeapons : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom identifyRebelBaseDefensiveCapabilities
+//    	info:isAbout executionPhase
+    	info:prescribes scoutExecutionPhase
+    ]
+    
+//    //Desert Storm Operation
+//    //Mission instance
+//	instance desertStormMission : meg_mission:Mission [
+//        foundation:contains airCampaign
+//        foundation:contains groundOffensive	
+//    	foundation:contains centcomOperation
+//    ]
+//    
+//    //Mission Phase instance
+//    instance airCampaign : meg_mission:MissionPhase [
+//        foundation:isContainedIn desertStormMission
+//    ]
+//    
+//    instance groundOffensive : meg_mission:MissionPhase [
+//        foundation:isContainedIn desertStormMission
+//    ]
+//    
+//    //Mission Scenario instance
+//    instance centcomOperation : meg_mission:MissionScenario [
+//    	foundation:contains establishAirSuperiority 
+//    	foundation:contains destroyCentralizedC2	
+//    	foundation:isContainedIn desertStormMission
+//    ]
+//    
+//    //Mission Vignette instance
+//    instance establishAirSuperiority : meg_mission:MissionVignette [
+//    	foundation:isContainedIn centcomOperation
+//    ]
+//    
+//    instance destroyCentralizedC2 : meg_mission:MissionVignette [
+//    	foundation:isContainedIn centcomOperation
+//    ]
+//    
+//    //Independent Continuant
+//    instance operationalPerformer3 : meg_mission:OperationalPerformer
+//    
+//    //Mission Engineering Thread instance
+//    instance suppressionOfEnemyDefense : meg_mission:MissionEngineeringThread[
+//    	foundation:specificallyDependentOn operationalPerformer3
+//    	event:manifestsIn suppressEnemyAirDefense
+//	    foundation:contains receiveIntelligence
+//	    foundation:contains generateTasking
+//    ]
+//    
+//    //Mission Thread instance
+//    instance suppressEnemyAirDefense : meg_mission:MissionThread[
+//    	event:isManifestationOf suppressionOfEnemyDefense
+//	    foundation:contains conductSurveillance
+//	    foundation:contains setTasks
+//	    req:satisfies withdrawIraqFromKuwait
+//    ]
+//    
+//    //Mission Function instance
+//    instance receiveIntelligence : meg_mission:MissionFunction[
+//    	foundation:specificallyDependentOn operationalPerformer3
+//    	event:manifestsIn conductSurveillance
+//	    foundation:isContainedIn suppressionOfEnemyDefense
+//    ]
+//    
+//    instance generateTasking : meg_mission:MissionFunction[
+//    	foundation:specificallyDependentOn operationalPerformer3
+//    	event:manifestsIn setTasks
+//	    foundation:isContainedIn suppressionOfEnemyDefense
+//    ]
+//    
+//    //Mission Task instance
+//    instance conductSurveillance : meg_mission:MissionTask[
+//    	event:isManifestationOf receiveIntelligence
+//	    foundation:isContainedIn suppressEnemyAirDefense
+//	    req:satisfies locateIraquiForces
+//    ]
+//    
+//    instance setTasks : meg_mission:MissionTask[
+//    	event:isManifestationOf generateTasking
+//	    foundation:isContainedIn suppressEnemyAirDefense
+//	    req:satisfies locateIraquiForces
+//	    req:satisfies suppressIraquiForces
+//    ]
+//    
+//    //Mission Goal instance
+//    instance withdrawIraqFromKuwait : meg_mission:MissionGoal[
+//    	req:derivesRequirement locateIraquiForces
+//    	req:derivesRequirement suppressIraquiForces
+//    	info:isAbout desertStormMission
+//    	info:prescribes desertStormMission
+//    ]
+//    
+//    //Mission Objective instance
+//	instance locateIraquiForces : meg_mission:MissionObjective[
+//    	req:requirementDerivedFrom withdrawIraqFromKuwait 
+////    	info:isAbout groundOffensive
+//    	info:prescribes groundOffensive
+//   ]
+//    
+//    instance suppressIraquiForces : meg_mission:MissionObjective[
+//    	req:requirementDerivedFrom withdrawIraqFromKuwait 
+////    	info:isAbout airCampaign
+//    	info:prescribes airCampaign
+//    ]
+}

@@ -1,0 +1,8 @@
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+
+SELECT ?missionFunction ?mission
+WHERE {
+    ?mission a meg_mission:MissionEngineeringThread .
+    ?mission foundation:contains ?missionFunction .
+}

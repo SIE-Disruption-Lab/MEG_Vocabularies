@@ -1,0 +1,121 @@
+vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
+	extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
+    extends <http://uaontologies.com/UA_Core/UA_Information#> as info
+	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+	extends <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as sys_arch
+	extends <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
+	
+    
+    // Concepts
+    concept Mission < foundation:Process[
+    	restricts some foundation:contains to MissionPhase	
+    	restricts some foundation:contains to MissionScenario
+    ]
+	
+	concept MissionPhase < foundation:Process[
+		restricts all foundation:isContainedIn to Mission
+    	restricts some foundation:isContainedIn to Mission
+    ]
+    	
+    concept MissionEngineeringThread < foundation:Function[
+    	restricts some foundation:specificallyDependentOn to foundation:IndependentContinuant
+    	restricts all event:manifestsIn to MissionThread
+	    restricts some event:manifestsIn to MissionThread
+	    restricts all foundation:contains to MissionFunction
+    	restricts some foundation:contains to MissionFunction
+    	restricts all defines to MissionPhase
+    	restricts some defines to MissionPhase
+    ]
+    
+    concept MissionThread < sys_arch:FunctionOccurrence[
+    	restricts all event:isManifestationOf to MissionEngineeringThread
+    	restricts some event:isManifestationOf to MissionEngineeringThread
+    	restricts all foundation:contains to MissionTask
+    	restricts some foundation:contains to MissionTask
+    	restricts all req:satisfies to MissionGoal
+    	restricts some req:satisfies to MissionGoal
+    	
+    ]
+    
+    concept MissionFunction < foundation:Function[
+    	restricts some foundation:specificallyDependentOn to foundation:IndependentContinuant
+    	restricts all event:manifestsIn to MissionTask
+	    restricts some event:manifestsIn to MissionTask
+		restricts all foundation:isContainedIn to MissionEngineeringThread
+    	restricts some foundation:isContainedIn to MissionEngineeringThread
+    ]
+    
+    concept MissionTask < sys_arch:FunctionOccurrence[
+    	restricts all event:isManifestationOf to MissionFunction
+    	restricts some event:isManifestationOf to MissionFunction
+		restricts all foundation:isContainedIn to MissionThread
+    	restricts some foundation:isContainedIn to MissionThread
+    	restricts all req:satisfies to MissionObjective
+    	restricts some req:satisfies to MissionObjective
+    ]
+    
+    concept MissionArchitecture < sys_arch:Architecture[
+    	//
+    ]
+    
+    concept MissionScenario < foundation:Process[
+    	restricts all foundation:contains to MissionVignette
+    	restricts some foundation:contains to MissionVignette	
+    	restricts all foundation:isContainedIn to Mission
+    	restricts some foundation:isContainedIn to Mission
+    ]
+	
+	concept MissionVignette < foundation:Process[
+    	restricts all foundation:isContainedIn to MissionScenario
+    	restricts some foundation:isContainedIn to MissionScenario	
+    ]
+    
+    concept MissionGoal < req:Requirement[
+    	restricts all req:derivesRequirement to MissionObjective
+//    	restricts some info:isAbout to Mission
+    	restricts some info:prescribes to Mission
+    ]
+    
+    concept MissionObjective < req:Requirement[
+    	restricts all req:requirementDerivedFrom to MissionGoal 
+//    	restricts some info:isAbout to MissionPhase
+    	restricts some info:prescribes to MissionPhase
+    ]
+    
+    concept OperationalPerformer < foundation:IndependentContinuant [
+    	//
+    ]
+    
+    concept Condition < foundation:Quality[
+    	restricts all isConditionOf to foundation:Process
+    ]
+    
+    concept ScenarioCondition < Condition[
+    	restricts all isConditionOf to MissionScenario
+    ]
+    
+    concept VignetteCondition < Condition[
+    	restricts all isConditionOf to MissionVignette
+    ]
+    
+    //Relation
+    
+    relation entity HasCondition [
+		from foundation:Process
+		to Condition
+		forward hasCondition
+		reverse isConditionOf
+		asymmetric
+		irreflexive
+	]
+	
+	relation entity Defines [
+		from MissionEngineeringThread
+		to MissionPhase
+		forward defines
+		reverse isDefinedBy
+		asymmetric
+		irreflexive
+	]
+    
+}

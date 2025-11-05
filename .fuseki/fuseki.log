@@ -1,0 +1,141 @@
+[2025-10-23 20:13:56] Server     INFO  Apache Jena Fuseki 4.6.1
+[2025-10-23 20:13:56] Server     INFO  Configuration file: ../.fuseki.ttl
+[2025-10-23 20:13:56] Server     INFO  Path = /MEG_Vocabularies
+[2025-10-23 20:13:56] Server     INFO  System
+[2025-10-23 20:13:56] Server     INFO    Memory: 1.9 GiB
+[2025-10-23 20:13:56] Server     INFO    Java:   21.0.7
+[2025-10-23 20:13:56] Server     INFO    OS:     Windows 11 10.0 amd64
+[2025-10-23 20:13:56] Server     INFO    PID:    28996
+[2025-10-23 20:13:56] Server     INFO  Start Fuseki (http=3030)
+[2025-10-23 20:13:59] Fuseki     INFO  [1] GET http://localhost:3030/MEG_Vocabularies/sparql?query=select%20?g%20%7B%20graph%20?g%20%7B%20?o%20a%20%3Chttp://www.w3.org/2002/07/owl%23Ontology%3E%20%7D%20%7D
+[2025-10-23 20:13:59] Fuseki     INFO  [1] Query = select ?g { graph ?g { ?o a <http://www.w3.org/2002/07/owl#Ontology> } }
+[2025-10-23 20:13:59] Fuseki     INFO  [1] 200 OK (51 ms)
+[2025-10-23 20:13:59] Fuseki     INFO  [3] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Location
+[2025-10-23 20:13:59] Fuseki     INFO  [2] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Provenance
+[2025-10-23 20:13:59] Fuseki     INFO  [4] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/vocabulary/bundle
+[2025-10-23 20:13:59] Fuseki     INFO  [5] PUT http://localhost:3030/MEG_Vocabularies?graph=http://purl.org/dc/elements/1.1
+[2025-10-23 20:13:59] Fuseki     INFO  [6] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/individuals
+[2025-10-23 20:13:59] Fuseki     INFO  [7] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Ownership
+[2025-10-23 20:13:59] Fuseki     INFO  [8] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Measurement
+[2025-10-23 20:13:59] Fuseki     INFO  [10] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/properties
+[2025-10-23 20:13:59] Fuseki     INFO  [9] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Event
+[2025-10-23 20:13:59] Fuseki     INFO  [11] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Foundation/bundle
+[2025-10-23 20:13:59] Fuseki     INFO  [12] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/MEG_Description_Mission
+[2025-10-23 20:13:59] Fuseki     INFO  [13] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Information
+[2025-10-23 20:13:59] Fuseki     INFO  [14] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Domain/UA_Requirements
+[2025-10-23 20:13:59] Fuseki     INFO  [15] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Foundation/UA_Foundation
+[2025-10-23 20:13:59] Fuseki     INFO  [16] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/bundle
+[2025-10-23 20:13:59] Fuseki     INFO  [17] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle
+[2025-10-23 20:13:59] Fuseki     INFO  [18] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Domain/UA_SystemArchitecture
+[2025-10-23 20:14:00] Fuseki     INFO  [3] Body: Content-Length=7943, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=65 Triples=65 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [3] 201 Created (296 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [4] Body: Content-Length=44083, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=285 Triples=285 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [4] 201 Created (380 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [19] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/vocabulary/MEG_Mission
+[2025-10-23 20:14:00] Fuseki     INFO  [21] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Agent
+[2025-10-23 20:14:00] Fuseki     INFO  [20] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/classes
+[2025-10-23 20:14:00] Fuseki     INFO  [5] Body: Content-Length=4083, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=27 Triples=27 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [5] 201 Created (394 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [8] Body: Content-Length=32232, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=303 Triples=303 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [8] 201 Created (449 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [6] Body: Content-Length=70108, Content-Type=text/turtle, Charset=null => Turtle : Count=730 Triples=730 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [6] 201 Created (542 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [7] Body: Content-Length=7924, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=66 Triples=66 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [7] 201 Created (560 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [2] Body: Content-Length=18934, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=166 Triples=166 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [2] 201 Created (585 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [9] Body: Content-Length=29299, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=273 Triples=273 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [9] 201 Created (614 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [10] Body: Content-Length=39615, Content-Type=text/turtle, Charset=null => Turtle : Count=410 Triples=410 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [10] 201 Created (632 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [11] Body: Content-Length=10818, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=54 Triples=54 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [11] 201 Created (641 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [12] Body: Content-Length=26101, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=178 Triples=178 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [12] 201 Created (656 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [13] Body: Content-Length=38200, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=357 Triples=357 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [13] 201 Created (684 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [14] Body: Content-Length=49344, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=459 Triples=459 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [14] 201 Created (708 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [15] Body: Content-Length=45327, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=418 Triples=418 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [15] 201 Created (731 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [16] Body: Content-Length=26930, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=163 Triples=163 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [16] 201 Created (743 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [17] Body: Content-Length=1184, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=6 Triples=6 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [17] 201 Created (747 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [18] Body: Content-Length=40251, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=378 Triples=378 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [18] 201 Created (770 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [19] Body: Content-Length=18808, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=194 Triples=194 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [19] 201 Created (429 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [20] Body: Content-Length=65568, Content-Type=text/turtle, Charset=null => Turtle : Count=803 Triples=803 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [20] 201 Created (458 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [21] Body: Content-Length=47194, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=457 Triples=457 Quads=0
+[2025-10-23 20:14:00] Fuseki     INFO  [21] 201 Created (488 ms)
+[2025-10-23 20:14:00] Fuseki     INFO  [22] GET http://localhost:3030/MEG_Vocabularies/sparql?query=PREFIX%20%20meg_mission:%20%3Chttp://example.com/project/vocabulary/MEG_Mission%23%3E%0APREFIX%20%20foundation:%20%3Chttp://uaontologies.com/UA_Foundation/UA_Foundation%23%3E%0A%0ASELECT%20%20?mission%20?containedEntity%20?containedEntityType%0AWHERE%0A%20%20%7B%20?mission%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20meg_mission:Mission%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20foundation:contains%20%20?containedEntity%20.%0A%20%20%20%20?containedEntity%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20?containedEntityType%0A%20%20%20%20FILTER%20%28%20?containedEntityType%20NOT%20IN%20%28meg_mission:MissionPhase%2C%20meg_mission:MissionScenario%29%20%29%0A%20%20%7D%0A
+[2025-10-23 20:14:00] Fuseki     INFO  [22] Query = PREFIX  meg_mission: <http://example.com/project/vocabulary/MEG_Mission#> PREFIX  foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>  SELECT  ?mission ?containedEntity ?containedEntityType WHERE   { ?mission  a                    meg_mission:Mission ;               foundation:contains  ?containedEntity .     ?containedEntity               a                    ?containedEntityType     FILTER ( ?containedEntityType NOT IN (meg_mission:MissionPhase, meg_mission:MissionScenario) )   } 
+[2025-10-23 20:14:01] Fuseki     INFO  [22] 200 OK (68 ms)
+[2025-10-29 14:29:43] Fuseki     INFO  [23] GET http://localhost:3030/MEG_Vocabularies/sparql?query=select%20?g%20%7B%20graph%20?g%20%7B%20?o%20a%20%3Chttp://www.w3.org/2002/07/owl%23Ontology%3E%20%7D%20%7D
+[2025-10-29 14:29:43] Fuseki     INFO  [23] Query = select ?g { graph ?g { ?o a <http://www.w3.org/2002/07/owl#Ontology> } }
+[2025-10-29 14:29:43] Fuseki     INFO  [23] 200 OK (375 ms)
+[2025-10-29 14:29:43] Fuseki     INFO  [24] PUT http://localhost:3030/MEG_Vocabularies?graph=http://purl.org/dc/elements/1.1
+[2025-10-29 14:29:43] Fuseki     INFO  [25] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Provenance
+[2025-10-29 14:29:43] Fuseki     INFO  [26] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Event
+[2025-10-29 14:29:43] Fuseki     INFO  [27] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/vocabulary/bundle
+[2025-10-29 14:29:43] Fuseki     INFO  [28] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/individuals
+[2025-10-29 14:29:43] Fuseki     INFO  [29] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Measurement
+[2025-10-29 14:29:43] Fuseki     INFO  [30] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Ownership
+[2025-10-29 14:29:43] Fuseki     INFO  [31] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/MEG_Description_Mission
+[2025-10-29 14:29:43] Fuseki     INFO  [32] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Agent
+[2025-10-29 14:29:43] Fuseki     INFO  [33] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Location
+[2025-10-29 14:29:43] Fuseki     INFO  [35] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/classes
+[2025-10-29 14:29:44] Fuseki     INFO  [37] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Domain/UA_SystemArchitecture
+[2025-10-29 14:29:44] Fuseki     INFO  [34] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Foundation/UA_Foundation
+[2025-10-29 14:29:44] Fuseki     INFO  [36] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Foundation/bundle
+[2025-10-29 14:29:44] Fuseki     INFO  [38] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Domain/UA_Requirements
+[2025-10-29 14:29:44] Fuseki     INFO  [39] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/UA_Information
+[2025-10-29 14:29:44] Fuseki     INFO  [40] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle
+[2025-10-29 14:29:44] Fuseki     INFO  [25] Body: Content-Length=18934, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=166 Triples=166 Quads=0
+[2025-10-29 14:29:44] Fuseki     INFO  [25] 200 OK (541 ms)
+[2025-10-29 14:29:44] Fuseki     INFO  [26] Body: Content-Length=29299, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=273 Triples=273 Quads=0
+[2025-10-29 14:29:44] Fuseki     INFO  [26] 200 OK (923 ms)
+[2025-10-29 14:29:44] Fuseki     INFO  [41] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/vocabulary/MEG_Mission
+[2025-10-29 14:29:44] Fuseki     INFO  [42] PUT http://localhost:3030/MEG_Vocabularies?graph=http://uaontologies.com/UA_Core/bundle
+[2025-10-29 14:29:44] Fuseki     INFO  [24] Body: Content-Length=4083, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=27 Triples=27 Quads=0
+[2025-10-29 14:29:44] Fuseki     INFO  [24] 200 OK (1.044 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [27] Body: Content-Length=44847, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=293 Triples=293 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [27] 200 OK (1.299 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [43] PUT http://localhost:3030/MEG_Vocabularies?graph=http://example.com/project/description/bundle/properties
+[2025-10-29 14:29:45] Fuseki     INFO  [30] Body: Content-Length=7924, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=66 Triples=66 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [30] 200 OK (1.657 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [31] Body: Content-Length=20955, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=139 Triples=139 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [31] 200 OK (1.685 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [28] Body: Content-Length=57674, Content-Type=text/turtle, Charset=null => Turtle : Count=596 Triples=596 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [28] 200 OK (1.815 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [29] Body: Content-Length=32232, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=303 Triples=303 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [29] 200 OK (1.869 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [32] Body: Content-Length=47194, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=457 Triples=457 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [32] 200 OK (1.909 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [33] Body: Content-Length=7943, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=65 Triples=65 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [33] 200 OK (1.929 s)
+[2025-10-29 14:29:45] Fuseki     INFO  [35] Body: Content-Length=66131, Content-Type=text/turtle, Charset=null => Turtle : Count=810 Triples=810 Quads=0
+[2025-10-29 14:29:45] Fuseki     INFO  [35] 200 OK (1.988 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [34] Body: Content-Length=45327, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=418 Triples=418 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [34] 200 OK (2.007 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [37] Body: Content-Length=40251, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=378 Triples=378 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [37] 200 OK (2.050 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [36] Body: Content-Length=10818, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=54 Triples=54 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [36] 200 OK (2.071 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [39] Body: Content-Length=38200, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=357 Triples=357 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [39] 200 OK (2.110 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [38] Body: Content-Length=49344, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=459 Triples=459 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [38] 200 OK (2.165 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [40] Body: Content-Length=1184, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=6 Triples=6 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [40] 200 OK (2.176 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [41] Body: Content-Length=18538, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=189 Triples=189 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [41] 200 OK (1.355 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [42] Body: Content-Length=26930, Content-Type=application/rdf+xml, Charset=null => RDF/XML : Count=163 Triples=163 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [42] 200 OK (1.375 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [43] Body: Content-Length=39719, Content-Type=text/turtle, Charset=null => Turtle : Count=411 Triples=411 Quads=0
+[2025-10-29 14:29:46] Fuseki     INFO  [43] 200 OK (1.024 s)
+[2025-10-29 14:29:46] Fuseki     INFO  [44] GET http://localhost:3030/MEG_Vocabularies/sparql?query=PREFIX%20%20meg_mission:%20%3Chttp://example.com/project/vocabulary/MEG_Mission%23%3E%0APREFIX%20%20foundation:%20%3Chttp://uaontologies.com/UA_Foundation/UA_Foundation%23%3E%0A%0ASELECT%20%20?missionFunction%20?mission%0AWHERE%0A%20%20%7B%20?mission%20%20a%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20meg_mission:MissionEngineeringThread%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20foundation:contains%20%20?missionFunction%0A%20%20%7D%0A
+[2025-10-29 14:29:46] Fuseki     INFO  [44] Query = PREFIX  meg_mission: <http://example.com/project/vocabulary/MEG_Mission#> PREFIX  foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>  SELECT  ?missionFunction ?mission WHERE   { ?mission  a                    meg_mission:MissionEngineeringThread ;               foundation:contains  ?missionFunction   } 
+[2025-10-29 14:29:46] Fuseki     INFO  [44] 200 OK (35 ms)
