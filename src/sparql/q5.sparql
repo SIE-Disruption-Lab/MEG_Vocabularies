@@ -1,0 +1,18 @@
+PREFIX meg_desc_mission: <http://example.com/project/description/MEG_Description_Mission#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX event: <http://uaontologies.com/UA_Core/UA_Event#>
+PREFIX req: <http://uaontologies.com/UA_Domain/UA_Requirements#>
+
+SELECT ?task ?objective
+WHERE {
+    # Start with the specific function in question
+    VALUES ?function { meg_desc_mission:destroyShieldGenerators }
+    
+    # Find the task it manifests
+    ?function event:manifestsIn ?task .
+    
+    # Find the objective that task satisfies
+    ?task req:satisfies ?objective .
+    
+    ?objective a meg_mission:MissionObjective .
+}

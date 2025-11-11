@@ -1,0 +1,20 @@
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX req: <http://uaontologies.com/UA_Domain/UA_Requirements#>
+
+SELECT ?task ?thread
+WHERE {
+    # 1. Find all tasks and the mission threads they are part of.
+    ?task a meg_mission:MissionTask ;
+          foundation:isContainedIn ?thread .
+    ?thread a meg_mission:MissionThread .
+    
+    # 2. Use FILTER NOT EXISTS to find tasks that have no link...
+    FILTER NOT EXISTS {
+        # ...to EITHER a Goal OR an Objective.
+        ?task req:satisfies ?requirement .
+        { ?requirement a meg_mission:MissionGoal . }
+        UNION
+        { ?requirement a meg_mission:MissionObjective . }
+    }
+}

@@ -1,0 +1,18 @@
+PREFIX meg_desc_mission: <http://example.com/project/description/MEG_Description_Mission#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+
+SELECT ?function ?performer
+WHERE {
+    # Start with the specific engineering thread
+    VALUES ?thread { meg_desc_mission:scoutHothSurfaces }
+    
+    ?thread foundation:contains ?function .
+    
+    ?function a meg_mission:MissionFunction ;
+              # Find the performer this function is dependent on
+              foundation:specificallyDependentOn ?performer .
+              
+    ?performer a meg_mission:OperationalPerformer .
+}
+ORDER BY ?performer

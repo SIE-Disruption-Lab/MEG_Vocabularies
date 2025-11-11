@@ -1,0 +1,19 @@
+PREFIX meg_desc_mission: <http://example.com/project/description/MEG_Description_Mission#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX event: <http://uaontologies.com/UA_Core/UA_Event#>
+
+SELECT ?engineeringThread ?function ?task
+WHERE {
+    # Start with the specific engineering thread for the attack
+    ?engineeringThread a meg_mission:MissionEngineeringThread ;
+                       meg_mission:defines meg_desc_mission:attackExecutionPhase ;
+                       foundation:contains ?function .
+                       
+    ?function a meg_mission:MissionFunction ;
+              # Find the task that this function manifests
+              event:manifestsIn ?task .
+              
+    ?task a meg_mission:MissionTask .
+}
+ORDER BY ?engineeringThread ?function

@@ -32,28 +32,10 @@
     
 
 
-    <!-- http://example.com/project/vocabulary/MEG_Mission#Condition -->
-
-
-    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Condition">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
-    </rdf:Description>
-    
-
-
     <!-- http://example.com/project/vocabulary/MEG_Mission#Defines -->
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Defines">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-    </rdf:Description>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#HasCondition -->
-
-
-    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#HasCondition">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </rdf:Description>
     
@@ -173,8 +155,7 @@
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition">
-        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Condition"/>
-        <owl:disjointWith rdf:resource="http://example.com/project/vocabulary/MEG_Mission#VignetteCondition"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
     </rdf:Description>
     
 
@@ -183,7 +164,7 @@
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#VignetteCondition">
-        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Condition"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
     </rdf:Description>
     
 
@@ -1046,17 +1027,7 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Condition"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Defines"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#HasCondition"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#BelongsTo"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#HasInput"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#HasOrganizationalContext"/>
@@ -1123,6 +1094,16 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#VignetteCondition"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Measurement"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Unit"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ArchitectureDescription"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#Organization"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#Person"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Object"/>
@@ -1158,9 +1139,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Measurement"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Unit"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ArchitectureDescription"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

@@ -1,0 +1,19 @@
+PREFIX meg_desc_mission: <http://example.com/project/description/MEG_Description_Mission#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+PREFIX req: <http://uaontologies.com/UA_Domain/UA_Requirements#>
+PREFIX info: <http://uaontologies.com/UA_Core/UA_Information#>
+
+SELECT ?goal ?objective ?task
+WHERE {
+    # Start with goals that prescribe the specific attackMission
+    ?goal a meg_mission:MissionGoal ;
+          info:prescribes meg_desc_mission:attackMission ;
+          req:derivesRequirement ?objective .
+    
+    ?objective a meg_mission:MissionObjective .
+    
+    # Find tasks that satisfy those objectives
+    ?task a meg_mission:MissionTask ;
+          req:satisfies ?objective .
+}
+ORDER BY ?goal ?objective

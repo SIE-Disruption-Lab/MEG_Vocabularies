@@ -1,0 +1,32 @@
+{ "head": {
+    "vars": [ "task" , "thread" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportingFindings" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
+      }
+    ]
+  }
+}

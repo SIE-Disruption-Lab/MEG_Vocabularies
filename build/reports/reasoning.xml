@@ -88,7 +88,6 @@
     <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#HasUnit"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#MeasurementOf"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate"/>
-    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Condition"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionArchitecture"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#DerivesRequirement"/>
@@ -103,7 +102,6 @@
     <testcase name="http://uaontologies.com/UA_Core/UA_Agent#BelongsTo"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Information#PrescriptiveInformationEntity"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Refines"/>
-    <testcase name="http://example.com/project/vocabulary/MEG_Mission#HasCondition"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>

@@ -122,9 +122,6 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Core/UA_Event#OccursAt> .
 
-<http://example.com/project/vocabulary/MEG_Mission#isConditionOf>
-        rdf:type  owl:ObjectProperty .
-
 <http://uaontologies.com/UA_Core/UA_Measurement#HasApplicableDimension>
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Core/UA_Information#IsAbout> , <http://uaontologies.com/UA_Core/UA_Information#Describes> , <http://uaontologies.com/UA_Core/UA_Measurement#HasApplicableDimension> .
@@ -227,7 +224,7 @@ owl:topObjectProperty
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition> .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#Satisfies>
         rdf:type         owl:Class ;
@@ -244,9 +241,6 @@ owl:topObjectProperty
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Core/UA_Event#HasParticipant> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ExecutedBy> .
 
-<http://example.com/project/vocabulary/MEG_Mission#hasCondition>
-        rdf:type  owl:ObjectProperty .
-
 <http://uaontologies.com/UA_Core/UA_Information#InformationArtifact>
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Object> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity> , <http://uaontologies.com/UA_Core/UA_Information#InformationArtifact> .
@@ -262,7 +256,7 @@ owl:topObjectProperty
 
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration> .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity>
         rdf:type         owl:Class ;
@@ -292,16 +286,16 @@ owl:topObjectProperty
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canBeInputOf>
         rdf:type  owl:ObjectProperty .
 
-<http://uaontologies.com/UA_Core/UA_Event#occursBefore>
-        rdf:type  owl:ObjectProperty .
-
-<http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition>
-        rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://example.com/project/vocabulary/MEG_Mission#Condition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> .
-
 <http://uaontologies.com/UA_Core/UA_Agent#Agent>
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Core/UA_Agent#Agent> .
+
+<http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> , <http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> .
+
+<http://uaontologies.com/UA_Core/UA_Event#occursBefore>
+        rdf:type  owl:ObjectProperty .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate>
         rdf:type         owl:Class ;
@@ -312,7 +306,7 @@ owl:topObjectProperty
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent>
         rdf:type  owl:ObjectProperty .
@@ -339,26 +333,22 @@ owl:topObjectProperty
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> .
 
 <http://uaontologies.com/UA_Core/UA_Agent#Consumer>
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Core/UA_Agent#Consumer> .
-
-<http://example.com/project/vocabulary/MEG_Mission#HasCondition>
-        rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://example.com/project/vocabulary/MEG_Mission#HasCondition> .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#isThresholdValueOf>
         rdf:type  owl:ObjectProperty .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity> .
 
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture> .
 
 <http://uaontologies.com/UA_Core/UA_Event#isTemporalRegionOf>
         rdf:type  owl:ObjectProperty .
@@ -568,15 +558,15 @@ owl:Thing  rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#Energy>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Energy> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Energy> .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity> .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#QuantitativeRequirement>
         rdf:type         owl:Class ;
@@ -598,7 +588,7 @@ owl:Thing  rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#Quantity>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Core/UA_Measurement#Quantity> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Core/UA_Measurement#Quantity> .
 
 <http://uaontologies.com/UA_Core/UA_Ownership#isOwnedBy>
         rdf:type  owl:ObjectProperty .
@@ -654,7 +644,7 @@ owl:Thing  rdf:type  owl:Class .
         rdf:type         owl:Ontology ;
         rdfs:comment     "Generated by Owl Reason 2.15.0" ;
         owl:imports      <http://example.com/project/description/bundle> ;
-        owl:versionInfo  "1762301450" .
+        owl:versionInfo  "1762823407" .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#DerivesRequirement>
         rdf:type         owl:Class ;
@@ -697,10 +687,6 @@ owl:Thing  rdf:type  owl:Class .
         rdf:type         owl:Class ;
         rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity> .
 
-<http://example.com/project/vocabulary/MEG_Mission#Condition>
-        rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://example.com/project/vocabulary/MEG_Mission#Condition> .
-
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canOutput>
         rdf:type  owl:ObjectProperty .
 
@@ -724,21 +710,21 @@ owl:Thing  rdf:type  owl:Class .
 
 <http://example.com/project/vocabulary/MEG_Mission#VignetteCondition>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://example.com/project/vocabulary/MEG_Mission#Condition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Quality> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://example.com/project/vocabulary/MEG_Mission#VignetteCondition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant> , <http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity> , <http://example.com/project/vocabulary/MEG_Mission#VignetteCondition> , <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#hasLowerValue>
         rdf:type  owl:DatatypeProperty .
 
 <http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer> .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#hasUpperValue>
         rdf:type  owl:DatatypeProperty .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity>
         rdf:type         owl:Class ;
-        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> .
+        rdfs:subClassOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> .
 
 <http://example.com/project/vocabulary/MEG_Mission#MissionPhase>
         rdf:type         owl:Class ;

@@ -33,7 +33,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts all foundation:contains to MissionTask
     	restricts some foundation:contains to MissionTask
     	restricts all req:satisfies to MissionGoal
-    	restricts some req:satisfies to MissionGoal
+//    	restricts some req:satisfies to MissionGoal
     	
     ]
     
@@ -51,7 +51,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 		restricts all foundation:isContainedIn to MissionThread
     	restricts some foundation:isContainedIn to MissionThread
     	restricts all req:satisfies to MissionObjective
-    	restricts some req:satisfies to MissionObjective
+//    	restricts some req:satisfies to MissionObjective
     ]
     
     concept MissionArchitecture < sys_arch:Architecture[
@@ -60,7 +60,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept MissionScenario < foundation:Process[
     	restricts all foundation:contains to MissionVignette
-    	restricts some foundation:contains to MissionVignette	
+//    	restricts some foundation:contains to MissionVignette	
     	restricts all foundation:isContainedIn to Mission
     	restricts some foundation:isContainedIn to Mission
     ]
@@ -86,28 +86,19 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	//
     ]
     
-    concept Condition < foundation:Quality[
-    	restricts all isConditionOf to foundation:Process
+    
+    concept ScenarioCondition < info:DescriptiveInformationEntity[
+    	restricts all info:describes to MissionScenario
+    	restricts some info:describes to MissionScenario
     ]
     
-    concept ScenarioCondition < Condition[
-    	restricts all isConditionOf to MissionScenario
+    concept VignetteCondition < info:DescriptiveInformationEntity[
+    	restricts all info:describes to MissionVignette
+    	restricts some info:describes to MissionVignette
     ]
     
-    concept VignetteCondition < Condition[
-    	restricts all isConditionOf to MissionVignette
-    ]
     
     //Relation
-    
-    relation entity HasCondition [
-		from foundation:Process
-		to Condition
-		forward hasCondition
-		reverse isConditionOf
-		asymmetric
-		irreflexive
-	]
 	
 	relation entity Defines [
 		from MissionEngineeringThread
