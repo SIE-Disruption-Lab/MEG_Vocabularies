@@ -1,13 +1,19 @@
 vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
     extends <http://uaontologies.com/UA_Core/UA_Information#> as info
-	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
+//	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
 	extends <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as sys_arch
 	extends <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
 	
+	// Aspects
+	
+	aspect OperationalThing
+	
+	aspect PhysicalThing
+
     
     // Concepts
-    concept Mission < foundation:Process[
+    concept Mission < StrategicPhase[
     	restricts some foundation:contains to MissionPhase	
     	restricts some foundation:contains to MissionScenario
     ]
@@ -16,20 +22,23 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 		restricts all foundation:isContainedIn to Mission
     	restricts some foundation:isContainedIn to Mission
     ]
+    
+    concept StrategicPhase < foundation:Process[
+    ]
     	
-    concept MissionEngineeringThread < foundation:Function[
+    concept MissionEngineeringThread < foundation:Function, PhysicalThing[
     	restricts some foundation:specificallyDependentOn to foundation:IndependentContinuant
-    	restricts all event:manifestsIn to MissionThread
-	    restricts some event:manifestsIn to MissionThread
+    	restricts all implements to MissionThread
+//	    restricts some implements to MissionThread
 	    restricts all foundation:contains to MissionFunction
     	restricts some foundation:contains to MissionFunction
     	restricts all defines to MissionPhase
     	restricts some defines to MissionPhase
     ]
     
-    concept MissionThread < sys_arch:FunctionOccurrence[
-    	restricts all event:isManifestationOf to MissionEngineeringThread
-    	restricts some event:isManifestationOf to MissionEngineeringThread
+    concept MissionThread < OperationalActivity[
+    	restricts all isImplementedBy to MissionEngineeringThread
+//    	restricts some isImplementedBy to MissionEngineeringThread
     	restricts all foundation:contains to MissionTask
     	restricts some foundation:contains to MissionTask
     	restricts all req:satisfies to MissionGoal
@@ -37,25 +46,38 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	
     ]
     
-    concept MissionFunction < foundation:Function[
+    concept OperationalActivity < foundation:Process, OperationalThing[
+    	
+    ]
+    
+    concept MissionFunction < foundation:Function, PhysicalThing[
     	restricts some foundation:specificallyDependentOn to foundation:IndependentContinuant
-    	restricts all event:manifestsIn to MissionTask
-	    restricts some event:manifestsIn to MissionTask
+    	restricts all implements to MissionTask
+//	    restricts some implements to MissionTask
 		restricts all foundation:isContainedIn to MissionEngineeringThread
     	restricts some foundation:isContainedIn to MissionEngineeringThread
     ]
     
-    concept MissionTask < sys_arch:FunctionOccurrence[
-    	restricts all event:isManifestationOf to MissionFunction
-    	restricts some event:isManifestationOf to MissionFunction
+    concept MissionTask < OperationalActivity[
+    	restricts all isImplementedBy to MissionFunction
+//    	restricts some isImplementedBy to MissionFunction
 		restricts all foundation:isContainedIn to MissionThread
     	restricts some foundation:isContainedIn to MissionThread
     	restricts all req:satisfies to MissionObjective
 //    	restricts some req:satisfies to MissionObjective
     ]
     
-    concept MissionArchitecture < sys_arch:Architecture[
-    	//
+    
+    concept MissionArchitecture < sys_arch:System, OperationalThing[
+    	
+    ]
+    
+    concept ResourceArchitecture < sys_arch:System, PhysicalThing[
+    	
+    ]
+    
+    concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
+    	
     ]
     
     concept MissionScenario < foundation:Process[
@@ -82,10 +104,13 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts some info:prescribes to MissionPhase
     ]
     
-    concept OperationalPerformer < foundation:IndependentContinuant [
-    	//
+    concept ForceComponent < sys_arch:System, OperationalThing[
+    	restricts all foundation:contains to OperationalPerformer
     ]
     
+    concept OperationalPerformer < sys_arch:System, OperationalThing[
+    	restricts all foundation:isContainedIn to ForceComponent
+    ]    
     
     concept ScenarioCondition < info:DescriptiveInformationEntity[
     	restricts all info:describes to MissionScenario
@@ -97,6 +122,18 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts some info:describes to MissionVignette
     ]
     
+    concept Outcome < foundation:Quality[
+    	
+    ]
+    
+    concept OutcomeDescriptior < info:DescriptiveInformationEntity[
+    	restricts all info:describes to Outcome
+    	restricts some info:describes to Outcome
+    	restricts all informs to Stakeholder
+    	restricts some informs to Stakeholder
+    ]
+    
+    concept Stakeholder < foundation:Role
     
     //Relation
 	
@@ -105,6 +142,24 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 		to MissionPhase
 		forward defines
 		reverse isDefinedBy
+		asymmetric
+		irreflexive
+	]
+	
+	relation entity Implements [
+		from PhysicalThing
+		to OperationalThing
+		forward implements
+		reverse isImplementedBy
+		asymmetric
+		irreflexive
+	]
+	
+	relation entity Informs [
+		from OutcomeDescriptior
+		to Stakeholder
+		forward informs
+		reverse isInformedBy
 		asymmetric
 		irreflexive
 	]

@@ -32,6 +32,15 @@
     
 
 
+    <!-- http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
+    </rdf:Description>
+    
+
+
     <!-- http://example.com/project/vocabulary/MEG_Mission#Defines -->
 
 
@@ -41,11 +50,38 @@
     
 
 
+    <!-- http://example.com/project/vocabulary/MEG_Mission#ForceComponent -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ForceComponent">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#Implements -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Implements">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#Informs -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Informs">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </rdf:Description>
+    
+
+
     <!-- http://example.com/project/vocabulary/MEG_Mission#Mission -->
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Mission">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
     </rdf:Description>
     
 
@@ -54,7 +90,7 @@
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionArchitecture">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
     </rdf:Description>
     
 
@@ -118,7 +154,7 @@
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionTask">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
         <owl:disjointWith rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
     </rdf:Description>
     
@@ -128,7 +164,7 @@
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionThread">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
     </rdf:Description>
     
 
@@ -142,11 +178,47 @@
     
 
 
+    <!-- http://example.com/project/vocabulary/MEG_Mission#OperationalActivity -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+    </rdf:Description>
+    
+
+
     <!-- http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer -->
 
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#Outcome -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Outcome">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptior -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptior">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
     </rdf:Description>
     
 
@@ -156,6 +228,25 @@
 
     <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition">
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#Stakeholder -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Stakeholder">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Role"/>
+        <owl:disjointWith rdf:resource="http://uaontologies.com/UA_Core/UA_Agent#ProcessOwner"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#StrategicPhase -->
+
+
+    <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
     </rdf:Description>
     
 
@@ -883,6 +974,7 @@
 
     <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity">
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
+        <owl:disjointWith rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
     </rdf:Description>
     
 
@@ -1027,7 +1119,19 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ForceComponent"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionArchitecture"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Defines"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Implements"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Informs"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#BelongsTo"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#HasInput"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#HasOrganizationalContext"/>
@@ -1066,17 +1170,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Mission"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionScenario"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionVignette"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionGoal"/>
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionObjective"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_Requirements#FunctionalRequirement"/>
@@ -1086,14 +1179,28 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionScenario"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionVignette"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
+            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptior"/>
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition"/>
             <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#VignetteCondition"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Measurement"/>
@@ -1134,14 +1241,6 @@
             <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant"/>
             <rdf:Description rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
-        </owl:members>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
