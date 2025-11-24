@@ -32,8 +32,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 //	    restricts some implements to MissionThread
 	    restricts all foundation:contains to MissionFunction
     	restricts some foundation:contains to MissionFunction
-    	restricts all defines to MissionPhase
-    	restricts some defines to MissionPhase
+//    	restricts all defines to MissionPhase
+//    	restricts some defines to MissionPhase
     ]
     
     concept MissionThread < OperationalActivity[
@@ -123,7 +123,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     concept Outcome < foundation:Quality[
-    	
+    	restricts all req:satisfies to MissionGoal
+    	restricts all req:satisfies to MissionObjective 
     ]
     
     concept OutcomeDescriptior < info:DescriptiveInformationEntity[
