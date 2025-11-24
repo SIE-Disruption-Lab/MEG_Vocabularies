@@ -69,15 +69,16 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     
     concept MissionArchitecture < sys_arch:System, OperationalThing[
-    	
+    	restricts all isImplementedBy to ResourceArchitecture
+    	restricts all foundation:contains to ForceComponent
     ]
     
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
-    	
+    	restricts all implements to MissionArchitecture
     ]
     
     concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
-    	
+    	restricts all implements to ForceComponent
     ]
     
     concept MissionScenario < foundation:Process[
@@ -106,6 +107,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept ForceComponent < sys_arch:System, OperationalThing[
     	restricts all foundation:contains to OperationalPerformer
+    	restricts all foundation:isContainedIn to MissionArchitecture
+    	restricts all isImplementedBy to CapabilityConfiguration
     ]
     
     concept OperationalPerformer < sys_arch:System, OperationalThing[
