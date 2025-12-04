@@ -130,7 +130,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts all req:satisfies to MissionObjective 
     ]
     
-    concept OutcomeDescriptior < info:DescriptiveInformationEntity[
+    concept OutcomeDescriptor < info:DescriptiveInformationEntity[
     	restricts all info:describes to Outcome
     	restricts some info:describes to Outcome
     	restricts all informs to Stakeholder
@@ -160,7 +160,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	]
 	
 	relation entity Informs [
-		from OutcomeDescriptior
+		from OutcomeDescriptor
 		to Stakeholder
 		forward informs
 		reverse isInformedBy

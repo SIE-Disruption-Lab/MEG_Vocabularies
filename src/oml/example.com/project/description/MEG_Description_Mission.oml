@@ -52,72 +52,93 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    
     instance destroyKeyRebelHothDefenses : meg_mission:MissionEngineeringThread[
     	foundation:specificallyDependentOn operationalPerformer1
-    	event:manifestsIn attackPrimaryObjective
+    	//event:manifestsIn attackPrimaryObjective
+    	meg_mission:implements attackPrimaryObjective
 	    foundation:contains bombardRebelBase
 	    foundation:contains invadeRebelBase
 	    foundation:contains captureRebelLeaders
 	    foundation:contains preventRebelEscape
 	    foundation:contains destroyShieldGenerators
-	    meg_mission:defines attackExecutionPhase
+		// HUNTER ADDED THESE
+	    foundation:contains coordinateAirGroundAndSpaceForces
+	    foundation:contains maneuverToShieldGenerators
+	    foundation:contains protectEmpireGroundForces
+	    foundation:contains attackRebelDefensePositions
+	    // HUNTER COMMENTED THIS OUT
+	    //meg_mission:defines attackExecutionPhase
     ]
     
     //Mission Thread instance
     instance attackPrimaryObjective : meg_mission:MissionThread[
-    	event:isManifestationOf destroyKeyRebelHothDefenses
+    	//event:isManifestationOf destroyKeyRebelHothDefenses
+    	meg_mission:isImplementedBy destroyKeyRebelHothDefenses
 	    foundation:contains capturingRebelLeaders
 	    foundation:contains destroyingFleeingShips
 	    foundation:contains destroyingPrimaryOjective
+		// HUNTER ADDED THESE
+	    foundation:contains destroyingDefenseForces
+	    foundation:contains maneuveringToObjective
 	    req:satisfies destroyRebelDefenses
     ]
     
     //Mission Function instance
     instance bombardRebelBase : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn capturingRebelLeaders
+    	//event:manifestsIn capturingRebelLeaders
+    	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance invadeRebelBase : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn capturingRebelLeaders
+    	//event:manifestsIn capturingRebelLeaders
+    	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance captureRebelLeaders : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn capturingRebelLeaders
+    	//event:manifestsIn capturingRebelLeaders
+    	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance preventRebelEscape : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn destroyingFleeingShips
+    	//event:manifestsIn destroyingFleeingShips
+    	meg_mission:implements destroyingFleeingShips
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance destroyShieldGenerators : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn destroyingPrimaryOjective
+    	//event:manifestsIn destroyingPrimaryOjective
+    	meg_mission:implements destroyingPrimaryOjective
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     //Mission Task instance
     instance capturingRebelLeaders : meg_mission:MissionTask[
-    	event:isManifestationOf bombardRebelBase
+    	//event:isManifestationOf bombardRebelBase
+    	meg_mission:isImplementedBy bombardRebelBase
 	    foundation:isContainedIn attackPrimaryObjective
 	    req:satisfies destroyBaseForceShield
 	    req:satisfies destroyBaseWeapons
+		// HUNTER ADDED THIS AND COMMENTED THE OBJECTIVES ABOVE
+	    req:satisfies captureOrKillRebelLeaders
     ]
     
     instance destroyingFleeingShips : meg_mission:MissionTask[
-    	event:isManifestationOf preventRebelEscape
+    	//event:isManifestationOf preventRebelEscape
+    	meg_mission:isImplementedBy preventRebelEscape
 	    foundation:isContainedIn attackPrimaryObjective
 	    req:satisfies destroyBaseForceShield
 	    req:satisfies destroyBaseWeapons
     ]
     
     instance destroyingPrimaryOjective : meg_mission:MissionTask[
-    	event:isManifestationOf destroyShieldGenerators
+    	//event:isManifestationOf destroyShieldGenerators
+    	meg_mission:isImplementedBy destroyShieldGenerators
 	    foundation:isContainedIn attackPrimaryObjective
 	    req:satisfies destroyBaseForceShield
 	    req:satisfies destroyBaseWeapons
@@ -127,24 +148,24 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     instance destroyRebelDefenses : meg_mission:MissionGoal[
     	req:derivesRequirement destroyBaseForceShield 
     	req:derivesRequirement destroyBaseWeapons
- //   	info:isAbout attackMission
+    	//info:isAbout attackMission
     	info:prescribes attackMission
     ]
     
     //Mission Objective instance
 	instance destroyBaseForceShield : meg_mission:MissionObjective[
     	req:requirementDerivedFrom destroyRebelDefenses
-//    	info:isAbout executionPhase
+    	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
-   ]
+   	]
     
     instance destroyBaseWeapons : meg_mission:MissionObjective[
     	req:requirementDerivedFrom destroyRebelDefenses
-//    	info:isAbout executionPhase
+	   	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
     ]
     
-//    Conditions    
+    //Conditions    
     instance lifeSupportablePlanet : meg_mission:ScenarioCondition[
     	info:describes planetaryInvasion
     ]
@@ -175,17 +196,20 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    
     instance scoutHothSurfaces : meg_mission:MissionEngineeringThread[
     	foundation:specificallyDependentOn operationalPerformer1
-    	event:manifestsIn scoutPlanet
+    	//event:manifestsIn scoutPlanet
+    	meg_mission:implements scoutPlanet
 	    foundation:contains deployScoutDroids
 	    foundation:contains exploreHothSurface
 	    foundation:contains identifyRebelStructuresAndForces
 	    foundation:contains reportFindings
-	    meg_mission:defines scoutExecutionPhase
+	    // HUNTER COMMENTED THIS OUT
+	    //meg_mission:defines scoutExecutionPhase
     ]
     
     //Mission Thread instance
     instance scoutPlanet : meg_mission:MissionThread[
-    	event:isManifestationOf scoutHothSurfaces
+    	//event:isManifestationOf scoutHothSurfaces
+    	meg_mission:isImplementedBy scoutHothSurfaces
 	    foundation:contains launchingScoutUnits
 	    foundation:contains scoutingDefenseCapabilities
 	    foundation:contains reportingFindings
@@ -196,63 +220,71 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     //Mission Function instance
     instance deployScoutDroids : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn launchingScoutUnits
+    	//event:manifestsIn launchingScoutUnits
+    	meg_mission:implements launchingScoutUnits
 	    foundation:isContainedIn scoutHothSurfaces
     ]
     
     instance exploreHothSurface : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer3
-    	event:manifestsIn scoutingDefenseCapabilities
+    	//event:manifestsIn scoutingDefenseCapabilities
+    	meg_mission:implements scoutingDefenseCapabilities
 	    foundation:isContainedIn scoutHothSurfaces
     ]
     
     instance identifyRebelStructuresAndForces : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn scoutingDefenseCapabilities
+    	//event:manifestsIn scoutingDefenseCapabilities
+    	meg_mission:implements scoutingDefenseCapabilities
 	    foundation:isContainedIn scoutHothSurfaces
     ]
     
     instance reportFindings : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer3
-    	event:manifestsIn reportingFindings
+    	//event:manifestsIn reportingFindings
+    	meg_mission:implements reportingFindings
 	    foundation:isContainedIn scoutHothSurfaces
     ]
     
     //Mission Task instance
     instance launchingScoutUnits : meg_mission:MissionTask[
-    	event:isManifestationOf deployScoutDroids
+    	//event:isManifestationOf deployScoutDroids
+    	meg_mission:isImplementedBy deployScoutDroids
 	    foundation:isContainedIn scoutPlanet
-//	    req:satisfies identifyBaseForceShield
-//	    req:satisfies identifyBaseWeapons
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
     ]
     
     instance scoutingDefenseCapabilities : meg_mission:MissionTask[
-    	event:isManifestationOf exploreHothSurface
-    	event:isManifestationOf identifyRebelStructuresAndForces
+    	//event:isManifestationOf exploreHothSurface
+    	meg_mission:isImplementedBy exploreHothSurface
+    	//event:isManifestationOf identifyRebelStructuresAndForces
+    	meg_mission:isImplementedBy identifyRebelStructuresAndForces
 	    foundation:isContainedIn scoutPlanet
-//	    req:satisfies identifyBaseForceShield
-//	    req:satisfies identifyBaseWeapons
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
     ]
     
     instance reportingFindings : meg_mission:MissionTask[
-    	event:isManifestationOf reportFindings
+    	//event:isManifestationOf reportFindings
+    	meg_mission:isImplementedBy reportFindings
 	    foundation:isContainedIn scoutPlanet
-//	    req:satisfies identifyBaseForceShield
-//	    req:satisfies identifyBaseWeapons
+	    req:satisfies identifyBaseForceShield
+	    req:satisfies identifyBaseWeapons
     ]
     
     //Mission Goal instance
     instance identifyRebelBaseLocation : meg_mission:MissionGoal[
-//    	req:derivesRequirement identifyBaseForceShield //Update this
-//    	req:derivesRequirement identifyBaseWeapons		//Update this
- //   	info:isAbout attackMission
+    	req:derivesRequirement identifyBaseForceShield //Update this
+    	req:derivesRequirement identifyBaseWeapons		//Update this
+    	//info:isAbout attackMission
     	info:prescribes scoutMission
     ]
     
     instance identifyRebelBaseDefensiveCapabilities : meg_mission:MissionGoal[
-//    	req:derivesRequirement identifyBaseForceShield 
-//    	req:derivesRequirement identifyBaseWeapons
- //   	info:isAbout attackMission
+    	req:derivesRequirement identifyBaseForceShield 
+    	req:derivesRequirement identifyBaseWeapons
+    	//info:isAbout attackMission
     	info:prescribes scoutMission
     ]
     
@@ -290,18 +322,23 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     //Mission Engineering Thread instance
     instance deployAttackForce : meg_mission:MissionEngineeringThread[
     	foundation:specificallyDependentOn operationalPerformer1
-    	event:manifestsIn deployingAttackForce
+    	//event:manifestsIn deployingAttackForce
+    	meg_mission:implements deployingAttackForce
 	    foundation:contains loadEquipmentOnTransports
 	    foundation:contains loadPersonnelOnTransports
 	    foundation:contains launchTransports
 	    foundation:contains maneuverToLandingZone
 	    foundation:contains disembarkTroops
-	    meg_mission:defines landingExecutionPhase
+		// HUNTER ADDED THIS
+	    foundation:contains unloadEquipment
+	    // HUNTER COMMENTED THIS OUT
+	    //meg_mission:defines landingExecutionPhase
     ]
     
     //Mission Thread instance
     instance deployingAttackForce : meg_mission:MissionThread[
-    	event:isManifestationOf deployAttackForce
+    	//event:isManifestationOf deployAttackForce
+    	meg_mission:isImplementedBy deployAttackForce
 	    foundation:contains loadingTroopsAndEquipment
 	    foundation:contains maneuveringToLandingZone
 	    foundation:contains disembarkingTroopsAndEquipment
@@ -310,52 +347,452 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     //Mission Function instance
     instance loadEquipmentOnTransports : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn loadingTroopsAndEquipment
+    	//event:manifestsIn loadingTroopsAndEquipment
+    	meg_mission:implements loadingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance loadPersonnelOnTransports : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn loadingTroopsAndEquipment
+    	//event:manifestsIn loadingTroopsAndEquipment
+    	meg_mission:implements loadingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance launchTransports : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn maneuveringToLandingZone
+    	//event:manifestsIn maneuveringToLandingZone
+    	meg_mission:implements maneuveringToLandingZone
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance maneuverToLandingZone : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn maneuveringToLandingZone
+    	//event:manifestsIn maneuveringToLandingZone
+    	meg_mission:implements maneuveringToLandingZone
 	    foundation:isContainedIn deployAttackForce
     ]
 
     instance disembarkTroops : meg_mission:MissionFunction[
     	foundation:specificallyDependentOn operationalPerformer2
-    	event:manifestsIn disembarkingTroopsAndEquipment
+    	//event:manifestsIn disembarkingTroopsAndEquipment
+    	meg_mission:implements disembarkingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
     ]
     
     //Mission Task instance
     instance loadingTroopsAndEquipment : meg_mission:MissionTask[
-    	event:isManifestationOf loadPersonnelOnTransports
-    	event:isManifestationOf loadEquipmentOnTransports
+    	//event:isManifestationOf loadPersonnelOnTransports
+    	meg_mission:isImplementedBy loadPersonnelOnTransports
+    	//event:isManifestationOf loadEquipmentOnTransports
+    	meg_mission:isImplementedBy loadEquipmentOnTransports
 	    foundation:isContainedIn deployingAttackForce 
     ]
     
     instance maneuveringToLandingZone : meg_mission:MissionTask[
-    	event:isManifestationOf launchTransports
-    	event:isManifestationOf maneuverToLandingZone
+    	//event:isManifestationOf launchTransports
+    	meg_mission:isImplementedBy launchTransports
+    	//event:isManifestationOf maneuverToLandingZone
+    	meg_mission:isImplementedBy maneuverToLandingZone
 	    foundation:isContainedIn deployingAttackForce 
     ]
     
     instance disembarkingTroopsAndEquipment : meg_mission:MissionTask[
-    	event:isManifestationOf disembarkTroops
-	    foundation:isContainedIn deployingAttackForce
+    	//event:isManifestationOf disembarkTroops
+    	meg_mission:isImplementedBy disembarkTroops
+		// HUNTER ADDED THIS
+    	//event:isManifestationOf unloadEquipment
+    	meg_mission:isImplementedBy unloadEquipment
+		foundation:isContainedIn deployingAttackForce
+    ]
+
+
+
+
+
+	// HUNTER ADDED THESE
+
+    //Mission Goal instance
+    instance deliverLukeSkywalker : meg_mission:MissionGoal[
+    	req:derivesRequirement locateLukeSkywalker 
+    	req:derivesRequirement captureLukeSkywalker
+    	//info:isAbout attackMission
+    	info:prescribes attackMission
     ]
     
+    //Mission Objective instance
+	instance locateLukeSkywalker : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom deliverLukeSkywalker
+    	//info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+   ]
+    
+    instance captureLukeSkywalker : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom deliverLukeSkywalker
+    	//info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+    ]   
+
+
+
+    //Mission Goal instance
+    instance preventRebelEscape : meg_mission:MissionGoal[
+    	req:derivesRequirement destroyEscapeCraft 
+    	req:derivesRequirement captureOrKillRebelLeaders
+    	//info:isAbout attackMission
+    	info:prescribes attackMission
+    ]
+    
+    //Mission Objective instance
+	instance destroyEscapeCraft : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom preventRebelEscape
+    	//info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+   ]
+    
+    instance captureOrKillRebelLeaders : meg_mission:MissionObjective[
+    	req:requirementDerivedFrom preventRebelEscape
+    	//info:isAbout executionPhase
+    	info:prescribes attackExecutionPhase
+    ]   
+
+
+
+    //Stakeholder instance
+    instance legionCommander : meg_mission:Stakeholder[
+
+    ]
+
+
+
+    //Mission Function instance
+    instance coordinateAirGroundAndSpaceForces : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+		foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance maneuverToShieldGenerators : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	//event:manifestsIn maneuveringToObjective
+    	meg_mission:implements maneuveringToObjective
+		foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance protectEmpireGroundForces : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+		foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+    instance attackRebelDefensePositions : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	//event:manifestsIn destroyingDefenseForces
+    	meg_mission:implements destroyingDefenseForces
+		foundation:isContainedIn destroyKeyRebelHothDefenses
+    ]
+    
+
+    
+    //Mission Task instance
+    instance maneuveringToObjective : meg_mission:MissionTask[
+    	//event:isManifestationOf maneuverToShieldGenerators
+    	meg_mission:isImplementedBy maneuverToShieldGenerators
+	    foundation:isContainedIn attackPrimaryObjective
+	    req:satisfies destroyBaseForceShield
+	    req:satisfies destroyBaseWeapons
+    ]
+    
+    instance destroyingDefenseForces : meg_mission:MissionTask[
+    	//event:isManifestationOf attackRebelDefensePositions
+    	meg_mission:isImplementedBy attackRebelDefensePositions
+	    foundation:isContainedIn attackPrimaryObjective
+	    req:satisfies destroyBaseForceShield
+	    req:satisfies destroyBaseWeapons
+    ]
+
+
+
+    //Mission Thread instance
+    instance weakenPlanetaryDefenses : meg_mission:MissionThread[
+	    foundation:contains bombardPlanetWithHeCanons
+	    foundation:contains destroyPlanetarySpaceForce
+    ]
+
+    //Mission Task instance
+    instance bombardPlanetWithHeCanons : meg_mission:MissionTask[
+	    foundation:isContainedIn weakenPlanetaryDefenses
+    ]
+    
+    instance destroyPlanetarySpaceForce : meg_mission:MissionTask[
+	    foundation:isContainedIn weakenPlanetaryDefenses
+    ]
+
+
+
+    //Mission Function instance for Landing Mission
+    instance unloadEquipment : meg_mission:MissionFunction[
+    	foundation:specificallyDependentOn operationalPerformer2
+    	//event:manifestsIn disembarkingTroopsAndEquipment
+    	meg_mission:implements disembarkingTroopsAndEquipment
+		foundation:isContainedIn deployAttackForce
+    ]
+
+
+
+   	//Floating Mission Objective instance
+   	instance captureOrKillRebelLeaders : meg_mission:MissionObjective[
+    	//info:isAbout executionPhase
+ 		//I DON'T KNOW IF THE PRESCRIBES IS CORRECT
+    	info:prescribes attackExecutionPhase
+   	]
+
+
+
+   	//Floating Mission Objective instance
+   	instance electronicIntelligenceResourcesEstablishedAndTasked : meg_mission:MissionObjective[
+    	//info:isAbout executionPhase
+		//THIS IS SATISFIED BY AN OUTCOME
+   	]
+
+   	instance humanIntelligenceOperativesEstablishedAndTasked : meg_mission:MissionObjective[
+
+   	]
+
+   	instance intelligenceAnalysisAndProcessingResourcesTasked : meg_mission:MissionObjective[
+
+   	]
+
+
+
+   	//Strategic Phase instance
+   	instance invasionMission : meg_mission:StrategicPhase[
+
+   	]
+   	
+
+	//Force Component instance
+	instance forceComponent1 : meg_mission:ForceComponent[
+		foundation:contains operationalPerformer1
+		foundation:contains operationalPerformer2
+		foundation:contains operationalPerformer3
+		foundation:isContainedIn planetaryInvasionMissionArchitecture
+		meg_mission:isImplementedBy empireOrgAndEquipment
+		meg_mission:isImplementedBy rebelOrgAndEquipment
+		meg_mission:isImplementedBy intelligenceAnalysisSystems
+   	]
+   	
+
+    //Mission (Operational) Architecture instance
+   	instance planetaryInvasionMissionArchitecture : meg_mission:MissionArchitecture[
+		meg_mission:isImplementedBy hothAttackMissionArchitecture
+		foundation:contains forceComponent1
+   	]
+
+   	//Resource Architecture instance
+   	instance hothAttackMissionArchitecture : meg_mission:ResourceArchitecture[
+		meg_mission:implements planetaryInvasionMissionArchitecture
+   	]
+
+   	//Capability Configuration instances
+   	instance empireOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		meg_mission:implements forceComponent1
+   	]
+
+   	instance rebelOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		meg_mission:implements forceComponent1
+   	]
+
+   	//Floating Capability Configuration instance
+   	// NEED TO UPDATE THIS BECAUSE THIS IS FLOATING; NEED TO MAYBE UPDATE THE VOCAB SO THAT IT'S ALLOWED TO BE FLOATING
+   	instance intelligenceAnalysisSystems : meg_mission:CapabilityConfiguration[
+		meg_mission:implements forceComponent1
+   	]
+
+
+
+   	//Operational Performer instances for Rebel Forces
+   	instance rebelGroundDefenseForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance rebelShield : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance rebelEscapeTransport : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance rebelAirDefenseForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance rebelCommand : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+
+   	//Operational Performer instances for Empire Forces
+   	instance empireAirAttackForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance empireGroundAttackForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance empireScoutForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance empireSpaceForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance empireCommand : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+   	instance empireAirTransportForces : meg_mission:OperationalPerformer[
+		foundation:isContainedIn forceComponent1
+   	]
+
+
+
+   	//Operational Activity instances for Rebel Forces
+   	instance provideCanonFire : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance destroyAttackingGroundForces : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance repelHeavyArtillery : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance provideShortRangeFires : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance evacuateTroopsAndEquipment : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance destroyAttackingAirForces : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance destroyAttackingGroundForces : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandEvacuation : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandFires : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance evaluateBattleDamage : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandGroundForces : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandAirForces : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance coordinateForces : meg_mission:OperationalActivity[
+
+   	]
+
+
+   	//Operational Activity instances for Empire Forces
+   	instance escortAirTransports : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance fireWeapons : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance captureEnemyLeaders : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance identifyEnemyDefensiveCapabilities : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance locateEnemyBase : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance transportGroundAndAirUnits : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance bombardEnemyDefenses : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandDeployment : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance commandAttack : meg_mission:OperationalActivity[
+
+   	]
+
+   	instance transportTroopsAndEquipment : meg_mission:OperationalActivity[
+
+   	]
+
+
+
+	// MIGHT HAVE FLIPPED THE IDEA OF OUTCOME AND OUTCOME DESCRIPTOR AND MIGHT HAVE DONE INFORMS RELATION WRONG
+   	//Outcome instances
+   	// THESE ARE WRONG FOR THE SATISFIES, NEED TO RELAX THE VOCAN RESTRICTION????????????????????????????????????????????????????????????
+   	instance hothPlanetSTC : meg_mission:Outcome[
+		req:satisfies destroyRebelDefenses
+		req:satisfies destroyBaseForceShield
+   	]
+
+   	instance baseLocated : meg_mission:Outcome[
+		req:satisfies destroyRebelDefenses
+		req:satisfies destroyBaseForceShield
+   	]
+
+    //Outcome Descriptor instances
+   	instance targetAreaSearched : meg_mission:OutcomeDescriptor[
+    	info:describes hothPlanetSTC
+    	meg_mission:informs legionCommander
+   	]
+
+   	instance intelligenceExploited : meg_mission:OutcomeDescriptor[
+    	info:describes baseLocated
+    	meg_mission:informs legionCommander
+   	]
+
+
+
+    //Person instances (WHEN READY FOR THEM)
+   	//instance sithLord : WHERE FROM:Person[
+//
+   	//]
+
+   	//instance emperor : WHERE FROM:Person[
+//
+   	//]
+    
+
+
+ 
   
 
     
