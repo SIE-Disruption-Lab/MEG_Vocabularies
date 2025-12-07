@@ -70,7 +70,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept MissionArchitecture < sys_arch:System, OperationalThing[
     	restricts all isImplementedBy to ResourceArchitecture
-    	restricts all foundation:contains to ForceComponent
+    	restricts all foundation:contains to OperationalPerformer
     ]
     
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
@@ -78,7 +78,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
-    	restricts all implements to ForceComponent
+    	restricts all implements to OperationalPerformer
     ]
     
     concept MissionScenario < foundation:Process[
@@ -105,14 +105,15 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts some info:prescribes to MissionPhase
     ]
     
-    concept ForceComponent < sys_arch:System, OperationalThing[
-    	restricts all foundation:contains to OperationalPerformer
-    	restricts all foundation:isContainedIn to MissionArchitecture
-    	restricts all isImplementedBy to CapabilityConfiguration
-    ]
+//    concept ForceComponent < sys_arch:System, OperationalThing[
+//    	restricts all foundation:contains to OperationalPerformer
+//    	restricts all foundation:isContainedIn to MissionArchitecture
+//    	restricts all isImplementedBy to CapabilityConfiguration
+//    ]
     
     concept OperationalPerformer < sys_arch:System, OperationalThing[
-    	restricts all foundation:isContainedIn to ForceComponent
+//    	restricts all foundation:isContainedIn to ForceComponent
+		restricts all foundation:isContainedIn to MissionArchitecture
     ]    
     
     concept ScenarioCondition < info:DescriptiveInformationEntity[
