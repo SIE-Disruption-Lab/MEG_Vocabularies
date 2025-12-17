@@ -1,8 +1,7 @@
 vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	extends <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
     extends <http://uaontologies.com/UA_Core/UA_Information#> as info
-//	extends <http://uaontologies.com/UA_Core/UA_Event#> as event
-	extends <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as sys_arch
+    extends <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#> as sys_arch
 	extends <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
 	
 	// Aspects
@@ -71,14 +70,16 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     concept OperationalArchitecture < sys_arch:System, OperationalThing[
     	restricts all isImplementedBy to ResourceArchitecture
     	restricts all foundation:contains to OperationalPerformer
+    	restricts all implements to MissionPhase
     ]
     
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
-    	restricts all implements to OperationalArchitecture
+//    	restricts all implements to OperationalArchitecture
+		restricts all implements to MissionPhase
     ]
     
     concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
-    	restricts all implements to OperationalPerformer
+//    	restricts all implements to OperationalPerformer
     ]
     
     concept MissionScenario < foundation:Process[
@@ -152,8 +153,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	]
 	
 	relation entity Implements [
-		from PhysicalThing
-		to OperationalThing
+		from foundation:IdentifiedEntity
+		to foundation:IdentifiedEntity
 		forward implements
 		reverse isImplementedBy
 		asymmetric
