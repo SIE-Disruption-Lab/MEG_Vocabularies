@@ -41,8 +41,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 //    	restricts some isImplementedBy to MissionEngineeringThread
     	restricts all foundation:contains to MissionTask
     	restricts some foundation:contains to MissionTask
-    	restricts all req:satisfies to MissionGoal
-//    	restricts some req:satisfies to MissionGoal
+    	restricts all req:satisfies to EnterpriseGoal
+//    	restricts some req:satisfies to EnterpriseGoal
     	
     ]
     
@@ -63,18 +63,18 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 //    	restricts some isImplementedBy to MissionFunction
 		restricts all foundation:isContainedIn to MissionThread
     	restricts some foundation:isContainedIn to MissionThread
-    	restricts all req:satisfies to MissionObjective
-//    	restricts some req:satisfies to MissionObjective
+    	restricts all req:satisfies to EnterpriseObjective
+//    	restricts some req:satisfies to EnterpriseObjective
     ]
     
     
-    concept MissionArchitecture < sys_arch:System, OperationalThing[
+    concept OperationalArchitecture < sys_arch:System, OperationalThing[
     	restricts all isImplementedBy to ResourceArchitecture
     	restricts all foundation:contains to OperationalPerformer
     ]
     
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
-    	restricts all implements to MissionArchitecture
+    	restricts all implements to OperationalArchitecture
     ]
     
     concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
@@ -93,27 +93,27 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts some foundation:isContainedIn to MissionScenario	
     ]
     
-    concept MissionGoal < req:Requirement[
-    	restricts all req:derivesRequirement to MissionObjective
+    concept EnterpriseGoal < req:Requirement[
+    	restricts all req:derivesRequirement to EnterpriseObjective
 //    	restricts some info:isAbout to Mission
     	restricts some info:prescribes to Mission
     ]
     
-    concept MissionObjective < req:Requirement[
-    	restricts all req:requirementDerivedFrom to MissionGoal 
+    concept EnterpriseObjective < req:Requirement[
+    	restricts all req:requirementDerivedFrom to EnterpriseGoal
 //    	restricts some info:isAbout to MissionPhase
     	restricts some info:prescribes to MissionPhase
     ]
     
 //    concept ForceComponent < sys_arch:System, OperationalThing[
 //    	restricts all foundation:contains to OperationalPerformer
-//    	restricts all foundation:isContainedIn to MissionArchitecture
+//    	restricts all foundation:isContainedIn to OperationalArchitecture
 //    	restricts all isImplementedBy to CapabilityConfiguration
 //    ]
     
     concept OperationalPerformer < sys_arch:System, OperationalThing[
 //    	restricts all foundation:isContainedIn to ForceComponent
-		restricts all foundation:isContainedIn to MissionArchitecture
+		restricts all foundation:isContainedIn to OperationalArchitecture
     ]    
     
     concept ScenarioCondition < info:DescriptiveInformationEntity[
@@ -127,8 +127,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     concept Outcome < foundation:Quality[
-    	restricts all req:satisfies to MissionGoal
-    	restricts all req:satisfies to MissionObjective 
+    	restricts all req:satisfies to EnterpriseGoal
+    	restricts all req:satisfies to EnterpriseObjective 
     ]
     
     concept OutcomeDescriptor < info:DescriptiveInformationEntity[

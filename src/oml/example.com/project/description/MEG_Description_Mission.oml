@@ -145,7 +145,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Goal instance
-    instance destroyRebelDefenses : meg_mission:MissionGoal[
+    instance destroyRebelDefenses : meg_mission:EnterpriseGoal[
     	req:derivesRequirement destroyBaseForceShield 
     	req:derivesRequirement destroyBaseWeapons
     	//info:isAbout attackMission
@@ -153,13 +153,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Objective instance
-	instance destroyBaseForceShield : meg_mission:MissionObjective[
+	instance destroyBaseForceShield : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom destroyRebelDefenses
     	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
    	]
     
-    instance destroyBaseWeapons : meg_mission:MissionObjective[
+    instance destroyBaseWeapons : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom destroyRebelDefenses
 	   	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
@@ -274,14 +274,14 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Goal instance
-    instance identifyRebelBaseLocation : meg_mission:MissionGoal[
+    instance identifyRebelBaseLocation : meg_mission:EnterpriseGoal[
     	req:derivesRequirement identifyBaseForceShield //Update this
     	req:derivesRequirement identifyBaseWeapons		//Update this
     	//info:isAbout attackMission
     	info:prescribes scoutMission
     ]
     
-    instance identifyRebelBaseDefensiveCapabilities : meg_mission:MissionGoal[
+    instance identifyRebelBaseDefensiveCapabilities : meg_mission:EnterpriseGoal[
     	req:derivesRequirement identifyBaseForceShield 
     	req:derivesRequirement identifyBaseWeapons
     	//info:isAbout attackMission
@@ -289,13 +289,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
 //    //Mission Objective instance
-//	instance identifyBaseForceShield : meg_mission:MissionObjective[
+//	instance identifyBaseForceShield : meg_mission:EnterpriseObjective[
 //    	req:requirementDerivedFrom identifyRebelBaseDefensiveCapabilities
 ////    	info:isAbout executionPhase
 //    	info:prescribes scoutExecutionPhase
 //   ]
 //    
-//    instance identifyBaseWeapons : meg_mission:MissionObjective[
+//    instance identifyBaseWeapons : meg_mission:EnterpriseObjective[
 //    	req:requirementDerivedFrom identifyRebelBaseDefensiveCapabilities
 ////    	info:isAbout executionPhase
 //    	info:prescribes scoutExecutionPhase
@@ -413,7 +413,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 	// HUNTER ADDED THESE
 
     //Mission Goal instance
-    instance deliverLukeSkywalker : meg_mission:MissionGoal[
+    instance deliverLukeSkywalker : meg_mission:EnterpriseGoal[
     	req:derivesRequirement locateLukeSkywalker 
     	req:derivesRequirement captureLukeSkywalker
     	//info:isAbout attackMission
@@ -421,13 +421,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Objective instance
-	instance locateLukeSkywalker : meg_mission:MissionObjective[
+	instance locateLukeSkywalker : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom deliverLukeSkywalker
     	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
    ]
     
-    instance captureLukeSkywalker : meg_mission:MissionObjective[
+    instance captureLukeSkywalker : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom deliverLukeSkywalker
     	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
@@ -436,7 +436,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
 
     //Mission Goal instance
-    instance preventRebelEscape : meg_mission:MissionGoal[
+    instance preventRebelEscape : meg_mission:EnterpriseGoal[
     	req:derivesRequirement destroyEscapeCraft 
     	req:derivesRequirement captureOrKillRebelLeaders
     	//info:isAbout attackMission
@@ -444,13 +444,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Objective instance
-	instance destroyEscapeCraft : meg_mission:MissionObjective[
+	instance destroyEscapeCraft : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom preventRebelEscape
     	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
    ]
     
-    instance captureOrKillRebelLeaders : meg_mission:MissionObjective[
+    instance captureOrKillRebelLeaders : meg_mission:EnterpriseObjective[
     	req:requirementDerivedFrom preventRebelEscape
     	//info:isAbout executionPhase
     	info:prescribes attackExecutionPhase
@@ -539,7 +539,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
 
    	//Floating Mission Objective instance
-   	instance captureOrKillRebelLeaders : meg_mission:MissionObjective[
+   	instance captureOrKillRebelLeaders : meg_mission:EnterpriseObjective[
     	//info:isAbout executionPhase
  		//I DON'T KNOW IF THE PRESCRIBES IS CORRECT
     	info:prescribes attackExecutionPhase
@@ -548,16 +548,16 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
 
    	//Floating Mission Objective instance
-   	instance electronicIntelligenceResourcesEstablishedAndTasked : meg_mission:MissionObjective[
+   	instance electronicIntelligenceResourcesEstablishedAndTasked : meg_mission:EnterpriseObjective[
     	//info:isAbout executionPhase
 		//THIS IS SATISFIED BY AN OUTCOME
    	]
 
-   	instance humanIntelligenceOperativesEstablishedAndTasked : meg_mission:MissionObjective[
+   	instance humanIntelligenceOperativesEstablishedAndTasked : meg_mission:EnterpriseObjective[
 
    	]
 
-   	instance intelligenceAnalysisAndProcessingResourcesTasked : meg_mission:MissionObjective[
+   	instance intelligenceAnalysisAndProcessingResourcesTasked : meg_mission:EnterpriseObjective[
 
    	]
 
@@ -570,21 +570,21 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    	
 
 	//Force Component instance
-	instance forceComponent1 : meg_mission:ForceComponent[
-		foundation:contains operationalPerformer1
-		foundation:contains operationalPerformer2
-		foundation:contains operationalPerformer3
-		foundation:isContainedIn planetaryInvasionMissionArchitecture
-		meg_mission:isImplementedBy empireOrgAndEquipment
-		meg_mission:isImplementedBy rebelOrgAndEquipment
-		meg_mission:isImplementedBy intelligenceAnalysisSystems
-   	]
+//	instance forceComponent1 : meg_mission:ForceComponent[
+//		foundation:contains operationalPerformer1
+//		foundation:contains operationalPerformer2
+//		foundation:contains operationalPerformer3
+//		foundation:isContainedIn planetaryInvasionMissionArchitecture
+//		meg_mission:isImplementedBy empireOrgAndEquipment
+//		meg_mission:isImplementedBy rebelOrgAndEquipment
+//		meg_mission:isImplementedBy intelligenceAnalysisSystems
+//   	]
    	
 
     //Mission (Operational) Architecture instance
-   	instance planetaryInvasionMissionArchitecture : meg_mission:MissionArchitecture[
+   	instance planetaryInvasionMissionArchitecture : meg_mission:OperationalArchitecture[
 		meg_mission:isImplementedBy hothAttackMissionArchitecture
-		foundation:contains forceComponent1
+		//foundation:contains forceComponent1
    	]
 
    	//Resource Architecture instance
@@ -594,66 +594,66 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
    	//Capability Configuration instances
    	instance empireOrgAndEquipment : meg_mission:CapabilityConfiguration[
-		meg_mission:implements forceComponent1
+		//meg_mission:implements forceComponent1
    	]
 
    	instance rebelOrgAndEquipment : meg_mission:CapabilityConfiguration[
-		meg_mission:implements forceComponent1
+		//meg_mission:implements forceComponent1
    	]
 
    	//Floating Capability Configuration instance
    	// NEED TO UPDATE THIS BECAUSE THIS IS FLOATING; NEED TO MAYBE UPDATE THE VOCAB SO THAT IT'S ALLOWED TO BE FLOATING
    	instance intelligenceAnalysisSystems : meg_mission:CapabilityConfiguration[
-		meg_mission:implements forceComponent1
+		//meg_mission:implements forceComponent1
    	]
 
 
 
    	//Operational Performer instances for Rebel Forces
    	instance rebelGroundDefenseForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance rebelShield : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance rebelEscapeTransport : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance rebelAirDefenseForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance rebelCommand : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
 
    	//Operational Performer instances for Empire Forces
    	instance empireAirAttackForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance empireGroundAttackForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance empireScoutForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance empireSpaceForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance empireCommand : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
    	instance empireAirTransportForces : meg_mission:OperationalPerformer[
-		foundation:isContainedIn forceComponent1
+		//foundation:isContainedIn forceComponent1
    	]
 
 
@@ -876,7 +876,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 //    ]
 //    
 //    //Mission Goal instance
-//    instance withdrawIraqFromKuwait : meg_mission:MissionGoal[
+//    instance withdrawIraqFromKuwait : meg_mission:EnterpriseGoal[
 //    	req:derivesRequirement locateIraquiForces
 //    	req:derivesRequirement suppressIraquiForces
 //    	info:isAbout desertStormMission
@@ -884,13 +884,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 //    ]
 //    
 //    //Mission Objective instance
-//	instance locateIraquiForces : meg_mission:MissionObjective[
+//	instance locateIraquiForces : meg_mission:EnterpriseObjective[
 //    	req:requirementDerivedFrom withdrawIraqFromKuwait 
 ////    	info:isAbout groundOffensive
 //    	info:prescribes groundOffensive
 //   ]
 //    
-//    instance suppressIraquiForces : meg_mission:MissionObjective[
+//    instance suppressIraquiForces : meg_mission:EnterpriseObjective[
 //    	req:requirementDerivedFrom withdrawIraqFromKuwait 
 ////    	info:isAbout airCampaign
 //    	info:prescribes airCampaign
