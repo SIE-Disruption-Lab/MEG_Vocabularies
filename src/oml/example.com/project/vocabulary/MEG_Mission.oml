@@ -76,7 +76,6 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
 //    	restricts all implements to OperationalArchitecture
 		restricts all implements to MissionPhase
-		//HUNTER ADDED THIS - POOJA CORRECT IF THE QUIANTIFIERS ARE WRONG
 		restricts all foundation:contains to CapabilityConfiguration
     ]
     
@@ -132,8 +131,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     concept Outcome < foundation:Quality[
-    	restricts all req:satisfies to EnterpriseGoal
-    	restricts all req:satisfies to EnterpriseObjective 
+    	restricts some req:satisfies to EnterpriseGoal
+    	restricts some req:satisfies to EnterpriseObjective 
     ]
     
     concept OutcomeDescriptor < info:DescriptiveInformationEntity[

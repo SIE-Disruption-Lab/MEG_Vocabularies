@@ -2,281 +2,153 @@
 <testsuites name="http://example.com/project/description/bundle">
   <testsuite name="Consistency">
     <testcase name="http://example.com/project/description/bundle">
-      <failure message="An individual belongs to a type and its complement"><![CDATA[
-An individual belongs to a type and its complement
+      <failure message="Individual violates minimum cardinality restriction"><![CDATA[
+Individual violates minimum cardinality restriction
 
-<?xml version="1.0"?>
-<rdf:RDF xmlns="urn:unnamed:ontology#ont512267133363201#"
-     xml:base="urn:unnamed:ontology#ont512267133363201"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:UA_Event="http://uaontologies.com/UA_Core/UA_Event#"
-     xmlns:UA_Foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#">
-    <owl:Ontology rdf:about="urn:unnamed:ontology#ont512267133363201"/>
-    
+// Class with restriction
 
+<http://uaontologies.com/UA_Core/UA_Information#InformationEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> [
+		<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+		<http://www.w3.org/2002/07/owl#onProperty> <http://uaontologies.com/UA_Core/UA_Information#isAbout> .
+		<http://www.w3.org/2002/07/owl#minQualifiedCardinality> 1 .
+		<http://www.w3.org/2002/07/owl#onClass> <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> .
+] .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+// Violating individual with conforming property values
 
-
-    
-
-
-    <!-- http://uaontologies.com/UA_Core/UA_Event#isManifestationOf -->
-
-
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Event#isManifestationOf">
-        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Core/UA_Event#manifestsIn"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://uaontologies.com/UA_Core/UA_Event#manifestsIn -->
-
-
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Event#manifestsIn"/>
-    
-
-
-    <!-- http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executedBy -->
-
-
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executedBy">
-        <rdfs:domain rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executes -->
-
-
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executes">
-        <owl:inverseOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executedBy"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn -->
-
-
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#MissionPhase -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#MissionScenario -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionScenario"/>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#MissionThread -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionThread">
-        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
-    </owl:Class>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#MissionVignette -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionVignette"/>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#OperationalActivity -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#StrategicPhase -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
-    
-
-
-    <!-- http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess -->
-
-
-    <owl:Class rdf:about="http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess"/>
-    
-
-
-    <!-- http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence -->
-
-
-    <owl:Class rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    
-
-
-    <!-- http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective -->
-
-
-    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses -->
-
-
-    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses">
-        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://example.com/project/description/MEG_Description_Mission#operationalPerformer1 -->
-
-
-    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // General axioms
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionScenario"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionVignette"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
-            <rdf:Description rdf:about="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess"/>
-            <rdf:Description rdf:about="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
-        </owl:members>
-    </rdf:Description>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Rules
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-
-    <rdf:Description rdf:about="urn:swrl:var#a">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#b">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl:var#c">
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
-        <swrl:body>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Core/UA_Event#manifestsIn"/>
-                        <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
-                        <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                        <rdf:first>
-                            <rdf:Description>
-                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn"/>
-                                <swrl:argument1 rdf:resource="urn:swrl:var#a"/>
-                                <swrl:argument2 rdf:resource="urn:swrl:var#c"/>
-                            </rdf:Description>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                </rdf:rest>
-            </rdf:Description>
-        </swrl:body>
-        <swrl:head>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
-                <rdf:first>
-                    <rdf:Description>
-                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#executes"/>
-                        <swrl:argument1 rdf:resource="urn:swrl:var#c"/>
-                        <swrl:argument2 rdf:resource="urn:swrl:var#b"/>
-                    </rdf:Description>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-            </rdf:Description>
-        </swrl:head>
-    </rdf:Description>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
-
-
+<http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisAndProcessingResourcesTasked> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> .
 
 ]]></failure>
     </testcase>
+  </testsuite>
+  <testsuite name="Satisfiability">
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Objective"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Interface"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Consumer"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Ownership#Owns"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Object"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Plan"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Constraint"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Agent"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#VerificationMethod"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ConnectsTo"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#HasItemFlow"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Unit"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Satisfies"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#IsRoleOf"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Function"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#KPP"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#Describes"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Implements"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Event#OccursBefore"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Location#LocatedAt"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Person"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Stakeholder"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#TemporalRegion"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Site"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#HasApplicableDimension"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Quantity"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#ManagedProcess"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Contains"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#ConstraintParameter"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#CanInput"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Provenance#GeneratedBy"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#ProcessOwner"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#HasObjectiveValue"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#ParameterOwnedBy"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ExecutedBy"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#ConfidenceInterval"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Organization"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#HasThresholdValue"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasOrganizationalContext"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#PhysicalThing"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Architecture"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasInput"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#Document"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Occurrent"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Event#OccursAt"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasOutput"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#Model"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#KSA"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#CanOutput"/>
+    <testcase name="http://www.w3.org/2002/07/owl#Thing"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionScenario"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OperationalArchitecture"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Dimension"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Procedure"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#Prescribes"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Verifies"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ArchitectureDescription"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Informs"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#HasDimension"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Requirement"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#DescriptiveInformationEntity"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Measurement"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Producer"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#PhysicalRequirement"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionVignette"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Event#OccursOn"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#InformationEntity"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OperationalThing"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Energy"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Role"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasPlannedTemporalRegion"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#HasUnit"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#MeasurementOf"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#DerivesRequirement"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Provenance#ApprovedBy"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#PerformanceRequirement"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Range"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Occupies"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Defines"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#FunctionOccurrence"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#BelongsTo"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#PrescriptiveInformationEntity"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Refines"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Configuration"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Agent#ResponsibleFor"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#InformationArtifact"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#FunctionalRequirement"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Information#IsAbout"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Mission"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#VignetteCondition"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Event#HasParticipant"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement"/>
+    <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#QuantitativeRequirement"/>
+    <testcase name="http://uaontologies.com/UA_Core/UA_Event#ManifestsIn"/>
+    <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn"/>
   </testsuite>
 </testsuites>

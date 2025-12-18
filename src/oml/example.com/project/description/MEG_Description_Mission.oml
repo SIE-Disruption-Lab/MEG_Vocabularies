@@ -1,7 +1,6 @@
 description <http://example.com/project/description/MEG_Description_Mission#> as meg_desc_mission {
 	uses <http://uaontologies.com/UA_Foundation/UA_Foundation#> as foundation
 	uses <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission
-	uses <http://uaontologies.com/UA_Core/UA_Event#> as event
 	uses <http://uaontologies.com/UA_Domain/UA_Requirements#> as req
 	uses <http://uaontologies.com/UA_Core/UA_Information#> as info
 	
@@ -774,11 +773,14 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    	instance hothPlanetSTC : meg_mission:Outcome[
 		req:satisfies destroyRebelDefenses
 		req:satisfies destroyBaseForceShield
+		foundation:specificallyDependentOn operationalPerformer3
    	]
 
    	instance baseLocated : meg_mission:Outcome[
 		req:satisfies destroyRebelDefenses
 		req:satisfies destroyBaseForceShield
+		foundation:specificallyDependentOn operationalPerformer3
+		
    	]
 
     //Outcome Descriptor instances

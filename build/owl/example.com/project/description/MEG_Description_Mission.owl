@@ -8,7 +8,6 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:UA_Event="http://uaontologies.com/UA_Core/UA_Event#"
      xmlns:MEG_Mission="http://example.com/project/vocabulary/MEG_Mission#"
      xmlns:UA_Foundation="http://uaontologies.com/UA_Foundation/UA_Foundation#"
      xmlns:UA_Information="http://uaontologies.com/UA_Core/UA_Information#"
@@ -16,7 +15,6 @@
      xmlns:meg_desc_mission="http://example.com/project/description/MEG_Description_Mission#">
     <owl:Ontology rdf:about="http://example.com/project/description/MEG_Description_Mission">
         <owl:imports rdf:resource="http://example.com/project/vocabulary/MEG_Mission"/>
-        <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Event"/>
         <owl:imports rdf:resource="http://uaontologies.com/UA_Core/UA_Information"/>
         <owl:imports rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements"/>
         <owl:imports rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation"/>
@@ -39,24 +37,24 @@
     
 
 
-    <!-- http://example.com/project/vocabulary/MEG_Mission#defines -->
+    <!-- http://example.com/project/vocabulary/MEG_Mission#implements -->
 
 
-    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/MEG_Mission#defines"/>
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/MEG_Mission#implements"/>
     
 
 
-    <!-- http://uaontologies.com/UA_Core/UA_Event#isManifestationOf -->
+    <!-- http://example.com/project/vocabulary/MEG_Mission#informs -->
 
 
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Event#isManifestationOf"/>
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/MEG_Mission#informs"/>
     
 
 
-    <!-- http://uaontologies.com/UA_Core/UA_Event#manifestsIn -->
+    <!-- http://example.com/project/vocabulary/MEG_Mission#isImplementedBy -->
 
 
-    <owl:ObjectProperty rdf:about="http://uaontologies.com/UA_Core/UA_Event#manifestsIn"/>
+    <owl:ObjectProperty rdf:about="http://example.com/project/vocabulary/MEG_Mission#isImplementedBy"/>
     
 
 
@@ -144,6 +142,8 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#hothAttackMissionArchitecture"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackMission"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
@@ -179,11 +179,60 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#baseLocated -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#baseLocated">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#bombardEnemyDefenses -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#bombardEnemyDefenses">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -194,9 +243,43 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#bombardRebelBase">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#captureEnemyLeaders -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#captureEnemyLeaders">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#captureLukeSkywalker -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#captureLukeSkywalker">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#deliverLukeSkywalker"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#captureOrKillRebelLeaders -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#captureOrKillRebelLeaders">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscape"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -207,7 +290,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#captureRebelLeaders">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -220,10 +303,106 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#bombardRebelBase"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#bombardRebelBase"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#captureOrKillRebelLeaders"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandAirForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandAirForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandAttack -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandAttack">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandDeployment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandDeployment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandEvacuation -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandEvacuation">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandFires -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandFires">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#commandGroundForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#commandGroundForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#coordinateForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#coordinateForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#deliverLukeSkywalker -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#deliverLukeSkywalker">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackMission"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#captureLukeSkywalker"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#locateLukeSkywalker"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -234,13 +413,13 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#deployAttackForce">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
-        <MEG_Mission:defines rdf:resource="http://example.com/project/description/MEG_Description_Mission#landingExecutionPhase"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkTroops"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchTransports"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#unloadEquipment"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
@@ -252,7 +431,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#deployScoutDroids">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -265,10 +444,30 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#destroyAttackingAirForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyAttackingAirForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#destroyAttackingGroundForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyAttackingGroundForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -278,7 +477,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionObjective"/>
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
         <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
         <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -290,9 +489,21 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionObjective"/>
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
         <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
         <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#destroyEscapeCraft -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyEscapeCraft">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscape"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -303,14 +514,28 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
-        <MEG_Mission:defines rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#bombardRebelBase"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#captureRebelLeaders"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#invadeRebelBase"/>
-        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscape"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -320,7 +545,7 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionGoal"/>
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
         <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackMission"/>
         <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
         <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
@@ -334,9 +559,23 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -347,7 +586,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscape"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
@@ -361,7 +600,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
@@ -375,7 +614,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#disembarkTroops">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -388,8 +627,120 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkTroops"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkTroops"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#unloadEquipment"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireAirAttackForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireAirAttackForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireAirTransportForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireAirTransportForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireCommand -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireCommand">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireGroundAttackForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireGroundAttackForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireOrgAndEquipment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireOrgAndEquipment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#hothAttackMissionArchitecture"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireScoutForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireScoutForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#empireSpaceForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#empireSpaceForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#escortAirTransports -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#escortAirTransports">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#evacuateTroopsAndEquipment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#evacuateTroopsAndEquipment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#evaluateBattleDamage -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#evaluateBattleDamage">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -400,9 +751,19 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#exploreHothSurface">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#fireWeapons -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#fireWeapons">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -431,12 +792,84 @@
     
 
 
+    <!-- http://example.com/project/description/MEG_Description_Mission#hothAttackMissionArchitecture -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#hothAttackMissionArchitecture">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#empireOrgAndEquipment"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#rebelOrgAndEquipment"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#humanIntelligenceOperativesEstablishedAndTasked -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#humanIntelligenceOperativesEstablishedAndTasked">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseDefensiveCapabilities"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseDefensiveCapabilities"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#identifyEnemyDefensiveCapabilities -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyEnemyDefensiveCapabilities">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseDefensiveCapabilities -->
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseDefensiveCapabilities">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionGoal"/>
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
         <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutMission"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -446,8 +879,10 @@
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseLocation">
-        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionGoal"/>
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
         <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutMission"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -458,9 +893,41 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisAndProcessingResourcesTasked -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisAndProcessingResourcesTasked">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisSystems -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisSystems">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#intelligenceExploited -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#intelligenceExploited">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor"/>
+        <MEG_Mission:informs rdf:resource="http://example.com/project/description/MEG_Description_Mission#legionCommander"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/MEG_Description_Mission#baseLocated"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -471,9 +938,19 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#invadeRebelBase">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#invasionMission -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#invasionMission">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -519,7 +996,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#launchTransports">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -532,8 +1009,20 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployScoutDroids"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployScoutDroids"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutPlanet"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#legionCommander -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#legionCommander">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Stakeholder"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -555,7 +1044,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -568,7 +1057,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -581,9 +1070,31 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#locateEnemyBase -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#locateEnemyBase">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#locateLukeSkywalker -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#locateLukeSkywalker">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Requirements:requirementDerivedFrom rdf:resource="http://example.com/project/description/MEG_Description_Mission#deliverLukeSkywalker"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -594,8 +1105,21 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
@@ -607,9 +1131,23 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchTransports"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchTransports"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployingAttackForce"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -620,6 +1158,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -630,6 +1169,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -640,6 +1180,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -658,14 +1199,144 @@
     
 
 
+    <!-- http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalArchitecture"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer1"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.com/project/description/MEG_Description_Mission#preventRebelEscape -->
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#preventRebelEscape">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#attackMission"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#captureOrKillRebelLeaders"/>
+        <UA_Requirements:derivesRequirement rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyEscapeCraft"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#provideCanonFire -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#provideCanonFire">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#provideShortRangeFires -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#provideShortRangeFires">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelAirDefenseForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelAirDefenseForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelCommand -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelCommand">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelEscapeTransport -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelEscapeTransport">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelGroundDefenseForces -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelGroundDefenseForces">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelOrgAndEquipment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelOrgAndEquipment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#hothAttackMissionArchitecture"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#rebelShield -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#rebelShield">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#repelHeavyArtillery -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#repelHeavyArtillery">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -676,7 +1347,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#reportFindings">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#reportingFindings"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#reportingFindings"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer3"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
@@ -689,7 +1360,9 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#reportingFindings">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#reportFindings"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#reportFindings"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutPlanet"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
@@ -712,8 +1385,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
-        <MEG_Mission:defines rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutExecutionPhase"/>
-        <UA_Event:manifestsIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutPlanet"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutPlanet"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployScoutDroids"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#exploreHothSurface"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces"/>
@@ -742,7 +1414,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#scoutPlanet">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseDefensiveCapabilities"/>
         <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseLocation"/>
         <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits"/>
@@ -769,9 +1441,68 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#scoutingDefenseCapabilities">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#exploreHothSurface"/>
-        <UA_Event:isManifestationOf rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#exploreHothSurface"/>
+        <MEG_Mission:isImplementedBy rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons"/>
         <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#scoutPlanet"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#targetAreaSearched -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#targetAreaSearched">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor"/>
+        <MEG_Mission:informs rdf:resource="http://example.com/project/description/MEG_Description_Mission#legionCommander"/>
+        <UA_Information:describes rdf:resource="http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#transportGroundAndAirUnits -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#transportGroundAndAirUnits">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#transportTroopsAndEquipment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#transportTroopsAndEquipment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalActivity"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#unloadEquipment -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#unloadEquipment">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionFunction"/>
+        <MEG_Mission:implements rdf:resource="http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment"/>
+        <UA_Foundation:isContainedIn rdf:resource="http://example.com/project/description/MEG_Description_Mission#deployAttackForce"/>
+        <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#operationalPerformer2"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionThread"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons"/>
+        <UA_Foundation:contains rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
 </rdf:RDF>
