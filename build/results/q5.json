@@ -3,14 +3,7 @@
   } ,
   "results": {
     "bindings": [
-      { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" } ,
-        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" }
-      } ,
-      { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" } ,
-        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" }
-      }
+      
     ]
   }
 }

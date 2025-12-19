@@ -1,0 +1,24 @@
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+
+SELECT ?performer ?activity
+WHERE {
+    # 1. Select all Operational Performers
+    ?performer a meg_mission:OperationalPerformer .
+    
+    # 2. Try to find an associated Activity (checking both directions)
+    OPTIONAL {
+        {
+            # Check if Performer points to Activity (e.g., performs, implements)
+            ?performer ?relation ?activity .
+            ?activity a meg_mission:OperationalActivity .
+        }
+        UNION
+        {
+            # Check if Activity points to Performer (e.g., specificallyDependentOn)
+            ?activity ?relation ?performer .
+            ?activity a meg_mission:OperationalActivity .
+        }
+    }
+}
+ORDER BY ?performer

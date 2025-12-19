@@ -1,0 +1,36 @@
+{ "head": {
+    "vars": [ "stakeholder" , "direction" , "relation" , "relatedConcept" , "conceptType" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "stakeholder": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#legionCommander" } ,
+        "direction": { "type": "literal" , "value": "Outgoing (From Stakeholder)" } ,
+        "relation": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#isInformedBy" } ,
+        "relatedConcept": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#intelligenceExploited" } ,
+        "conceptType": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor" }
+      } ,
+      { 
+        "stakeholder": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#legionCommander" } ,
+        "direction": { "type": "literal" , "value": "Outgoing (From Stakeholder)" } ,
+        "relation": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#isInformedBy" } ,
+        "relatedConcept": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#targetAreaSearched" } ,
+        "conceptType": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor" }
+      } ,
+      { 
+        "stakeholder": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#legionCommander" } ,
+        "direction": { "type": "literal" , "value": "Incoming (To Stakeholder)" } ,
+        "relation": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#informs" } ,
+        "relatedConcept": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#intelligenceExploited" } ,
+        "conceptType": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor" }
+      } ,
+      { 
+        "stakeholder": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#legionCommander" } ,
+        "direction": { "type": "literal" , "value": "Incoming (To Stakeholder)" } ,
+        "relation": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#informs" } ,
+        "relatedConcept": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#targetAreaSearched" } ,
+        "conceptType": { "type": "uri" , "value": "http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor" }
+      }
+    ]
+  }
+}

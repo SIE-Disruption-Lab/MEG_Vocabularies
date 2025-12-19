@@ -546,24 +546,34 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     	meg_mission:implements disembarkingTroopsAndEquipment
 		foundation:isContainedIn deployAttackForce
     ]
+    
+    // Created dummy variables to allow reasoner to continue
+//	instance dummyMission : meg_mission:Mission[
+//		foundation:contains dummyPhase
+//		foundation:contains dummyMissionScenario
+//	]
 
-
-
-
-
+	instance dummyPhase : meg_mission:MissionPhase[
+//		foundation:isContainedIn dummyMission
+	]
+	
+//	instance dummyMissionScenario : meg_mission:MissionScenario[
+//		foundation:isContainedIn dummyMission
+//	]
 
    	//Floating Mission Objective instance
    	instance electronicIntelligenceResourcesEstablishedAndTasked : meg_mission:EnterpriseObjective[
     	//info:isAbout executionPhase
 		//THIS IS SATISFIED BY AN OUTCOME
+		info:prescribes dummyPhase
    	]
 
    	instance humanIntelligenceOperativesEstablishedAndTasked : meg_mission:EnterpriseObjective[
-
+		info:prescribes dummyPhase
    	]
 
    	instance intelligenceAnalysisAndProcessingResourcesTasked : meg_mission:EnterpriseObjective[
-
+		info:prescribes dummyPhase
    	]
 
 

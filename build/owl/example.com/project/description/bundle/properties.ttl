@@ -3,6 +3,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 
+<http://example.com/project/vocabulary/MEG_Mission#OperationalThing>
+        rdf:type  owl:Class .
+
 <http://uaontologies.com/UA_Core/UA_Provenance#generatedAt>
         rdf:type            owl:DatatypeProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#generatedAt> .
@@ -25,6 +28,11 @@
 
 <http://uaontologies.com/UA_Core/UA_Information#Document>
         rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#implements>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/MEG_Mission#implements> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/MEG_Mission#isImplementedBy> .
 
 <http://uaontologies.com/UA_Core/UA_Information#PrescriptiveInformationEntity>
         rdf:type  owl:Class .
@@ -79,9 +87,6 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
         owl:inverseOf       <http://uaontologies.com/UA_Domain/UA_Requirements#derivesRequirement> .
 
 <http://example.com/project/vocabulary/MEG_Mission#Mission>
-        rdf:type  owl:Class .
-
-<http://example.com/project/vocabulary/MEG_Mission#MissionObjective>
         rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Core/UA_Agent#isOutputOf>
@@ -149,6 +154,9 @@ owl:topDataProperty  rdf:type  owl:DatatypeProperty .
 <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentOn>
         rdf:type  owl:Class .
 
+<http://example.com/project/vocabulary/MEG_Mission#OperationalActivity>
+        rdf:type  owl:Class .
+
 <http://uaontologies.com/UA_Core/UA_Information#Prescribes>
         rdf:type  owl:Class .
 
@@ -198,13 +206,13 @@ owl:topObjectProperty
 <http://uaontologies.com/UA_Domain/UA_Requirements#Verifies>
         rdf:type  owl:Class .
 
-<http://example.com/project/vocabulary/MEG_Mission#MissionGoal>
-        rdf:type  owl:Class .
-
 <http://uaontologies.com/UA_Core/UA_Agent#belongsTo>
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#belongsTo> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasBelonging> .
+
+<http://example.com/project/vocabulary/MEG_Mission#PhysicalThing>
+        rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#genericallyDependentOn>
         rdf:type            owl:ObjectProperty ;
@@ -249,6 +257,9 @@ owl:topObjectProperty
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Agent#isOrganizationalContextOf> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#hasOrganizationalContext> .
 
+<http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective>
+        rdf:type  owl:Class .
+
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ExecutedBy>
         rdf:type  owl:Class .
 
@@ -287,7 +298,13 @@ owl:topObjectProperty
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#approvedBy> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#approves> .
 
+<http://example.com/project/vocabulary/MEG_Mission#Stakeholder>
+        rdf:type  owl:Class .
+
 <http://uaontologies.com/UA_Core/UA_Measurement#Unit>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#StrategicPhase>
         rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#hasObjectiveText>
@@ -304,16 +321,16 @@ owl:topObjectProperty
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canBeInputOf> ;
         owl:inverseOf       <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canInput> .
 
-<http://uaontologies.com/UA_Core/UA_Agent#Agent>
-        rdf:type  owl:Class .
-
-<http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition>
-        rdf:type  owl:Class .
-
 <http://uaontologies.com/UA_Core/UA_Event#occursBefore>
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Event#occursBefore> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Event#occursAfter> .
+
+<http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition>
+        rdf:type  owl:Class .
+
+<http://uaontologies.com/UA_Core/UA_Agent#Agent>
+        rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Foundation/UA_Foundation#ObjectAggregate>
         rdf:type  owl:Class .
@@ -361,6 +378,12 @@ owl:topObjectProperty
         rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Core/UA_Agent#Consumer>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#Implements>
+        rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#OperationalArchitecture>
         rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#isThresholdValueOf>
@@ -420,9 +443,6 @@ owl:topObjectProperty
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#itemFlowOfConnection> ;
         owl:inverseOf       <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#hasItemFlow> .
 
-<http://example.com/project/vocabulary/MEG_Mission#MissionArchitecture>
-        rdf:type  owl:Class .
-
 <http://uaontologies.com/UA_Core/UA_Event#OccursBefore>
         rdf:type  owl:Class .
 
@@ -447,8 +467,16 @@ owl:topObjectProperty
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf> , <http://uaontologies.com/UA_Core/UA_Information#isDescribedBy> , <http://uaontologies.com/UA_Core/UA_Measurement#measuredBy> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#measurementOf> .
 
+<http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal>
+        rdf:type  owl:Class .
+
 <http://uaontologies.com/UA_Core/UA_Agent#Plan>
         rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#informs>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/MEG_Mission#informs> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/MEG_Mission#isInformedBy> .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#Measurement>
         rdf:type  owl:Class .
@@ -559,6 +587,11 @@ owl:Thing  rdf:type  owl:Class .
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Foundation/UA_Foundation#hasGenericDependent> , <http://uaontologies.com/UA_Core/UA_Agent#hasRole> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Agent#isRoleOf> .
 
+<http://example.com/project/vocabulary/MEG_Mission#isInformedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/MEG_Mission#isInformedBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/MEG_Mission#informs> .
+
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ArchitectureDescription>
         rdf:type  owl:Class .
 
@@ -585,6 +618,11 @@ owl:Thing  rdf:type  owl:Class .
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Provenance#generatedBy> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Provenance#generates> .
+
+<http://example.com/project/vocabulary/MEG_Mission#isImplementedBy>
+        rdf:type            owl:ObjectProperty ;
+        rdfs:subPropertyOf  <http://example.com/project/vocabulary/MEG_Mission#isImplementedBy> ;
+        owl:inverseOf       <http://example.com/project/vocabulary/MEG_Mission#implements> .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#SimpleMeasurement>
         rdf:type  owl:Class .
@@ -692,16 +730,22 @@ owl:Thing  rdf:type  owl:Class .
 <http://uaontologies.com/UA_Domain/UA_Requirements#PerformanceRequirement>
         rdf:type  owl:Class .
 
+<http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture>
+        rdf:type  owl:Class .
+
 <http://example.com/project/vocabulary/MEG_Mission#defines>
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://example.com/project/vocabulary/MEG_Mission#defines> ;
         owl:inverseOf       <http://example.com/project/vocabulary/MEG_Mission#isDefinedBy> .
 
+<http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration>
+        rdf:type  owl:Class .
+
 <http://example.com/project/description/bundle/properties>
         rdf:type         owl:Ontology ;
         rdfs:comment     "Generated by Owl Reason 2.15.0" ;
         owl:imports      <http://example.com/project/description/bundle> ;
-        owl:versionInfo  "1762823407" .
+        owl:versionInfo  "1766179556" .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#DerivesRequirement>
         rdf:type  owl:Class .
@@ -745,6 +789,9 @@ owl:Thing  rdf:type  owl:Class .
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canOutput> ;
         owl:inverseOf       <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#canBeOutputOf> .
+
+<http://example.com/project/vocabulary/MEG_Mission#OutcomeDescriptor>
+        rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#Interface>
         rdf:type  owl:Class .
@@ -815,11 +862,14 @@ owl:Thing  rdf:type  owl:Class .
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Information#describes> , <http://uaontologies.com/UA_Core/UA_Information#isAbout> , <http://uaontologies.com/UA_Core/UA_Measurement#measurementOf> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Measurement#measuredBy> .
 
-owl:Nothing  rdf:type  owl:Class .
-
 <http://uaontologies.com/UA_Domain/UA_Requirements#hasVerificationStatus>
         rdf:type            owl:DatatypeProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Domain/UA_Requirements#hasVerificationStatus> .
+
+owl:Nothing  rdf:type  owl:Class .
+
+<http://example.com/project/vocabulary/MEG_Mission#Informs>
+        rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Core/UA_Agent#IsRoleOf>
         rdf:type  owl:Class .
@@ -828,6 +878,9 @@ owl:Nothing  rdf:type  owl:Class .
         rdf:type            owl:ObjectProperty ;
         rdfs:subPropertyOf  <http://uaontologies.com/UA_Core/UA_Ownership#owns> ;
         owl:inverseOf       <http://uaontologies.com/UA_Core/UA_Ownership#isOwnedBy> .
+
+<http://example.com/project/vocabulary/MEG_Mission#Outcome>
+        rdf:type  owl:Class .
 
 <http://uaontologies.com/UA_Core/UA_Location#LocatedAt>
         rdf:type  owl:Class .

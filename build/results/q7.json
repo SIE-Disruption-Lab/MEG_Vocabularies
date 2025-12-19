@@ -1,0 +1,33 @@
+{ "head": {
+    "vars": [ "element" , "elementType" , "integrityIssue" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces" } ,
+        "elementType": { "type": "literal" , "value": "MissionFunction" } ,
+        "integrityIssue": { "type": "literal" , "value": "Does not implement any MissionTask" }
+      } ,
+      { 
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces" } ,
+        "elementType": { "type": "literal" , "value": "MissionFunction" } ,
+        "integrityIssue": { "type": "literal" , "value": "Does not implement any MissionTask" }
+      } ,
+      { 
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons" } ,
+        "elementType": { "type": "literal" , "value": "MissionTask" } ,
+        "integrityIssue": { "type": "literal" , "value": "Not implemented by any MissionFunction" }
+      } ,
+      { 
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce" } ,
+        "elementType": { "type": "literal" , "value": "MissionTask" } ,
+        "integrityIssue": { "type": "literal" , "value": "Not implemented by any MissionFunction" }
+      } ,
+      { 
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" } ,
+        "elementType": { "type": "literal" , "value": "MissionThread" } ,
+        "integrityIssue": { "type": "literal" , "value": "Not implemented by any MissionEngineeringThread" }
+      }
+    ]
+  }
+}

@@ -13,13 +13,13 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     // Concepts
     concept Mission < StrategicPhase[
-    	restricts some foundation:contains to MissionPhase	
-    	restricts some foundation:contains to MissionScenario
+//    	restricts some foundation:contains to MissionPhase	
+//    	restricts some foundation:contains to MissionScenario
     ]
 	
 	concept MissionPhase < foundation:Process[
 		restricts all foundation:isContainedIn to Mission
-    	restricts some foundation:isContainedIn to Mission
+//    	restricts some foundation:isContainedIn to Mission
     ]
     
     concept StrategicPhase < foundation:Process[
@@ -81,7 +81,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
 //    	restricts all implements to OperationalPerformer
-		//HUNTER ADDED THIS - POOJA CORRECT IF THE QUANTIFIERS ARE WRONG
+		restricts all foundation:contains to CapabilityConfiguration
 		restricts all foundation:isContainedIn to ResourceArchitecture
     ]
     
@@ -89,7 +89,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts all foundation:contains to MissionVignette
 //    	restricts some foundation:contains to MissionVignette	
     	restricts all foundation:isContainedIn to Mission
-    	restricts some foundation:isContainedIn to Mission
+//    	restricts some foundation:isContainedIn to Mission
     ]
 	
 	concept MissionVignette < foundation:Process[
@@ -117,6 +117,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept OperationalPerformer < sys_arch:System, OperationalThing[
 //    	restricts all foundation:isContainedIn to ForceComponent
+		restricts all foundation:contains to OperationalPerformer
 		restricts all foundation:isContainedIn to OperationalArchitecture
     ]    
     

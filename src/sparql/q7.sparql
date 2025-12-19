@@ -1,0 +1,39 @@
+PREFIX foundation: <http://uaontologies.com/UA_Foundation/UA_Foundation#>
+PREFIX meg_mission: <http://example.com/project/vocabulary/MEG_Mission#>
+
+SELECT ?element ?elementType ?integrityIssue
+WHERE {
+    # Check 1: Mission Threads not implemented by any Mission Engineering Thread
+    {
+        ?element a meg_mission:MissionThread .
+        BIND("MissionThread" AS ?elementType)
+        BIND("Not implemented by any MissionEngineeringThread" AS ?integrityIssue)
+        FILTER NOT EXISTS {
+            ?engThread a meg_mission:MissionEngineeringThread ;
+                       meg_mission:implements ?element .
+        }
+    }
+    UNION
+    # Check 2: Mission Tasks not implemented by any Mission Function
+    {
+        ?element a meg_mission:MissionTask .
+        BIND("MissionTask" AS ?elementType)
+        BIND("Not implemented by any MissionFunction" AS ?integrityIssue)
+        FILTER NOT EXISTS {
+            ?func a meg_mission:MissionFunction ;
+                  meg_mission:implements ?element .
+        }
+    }
+    UNION
+    # Check 3: Mission Functions that do not implement any Mission Task
+    {
+        ?element a meg_mission:MissionFunction .
+        BIND("MissionFunction" AS ?elementType)
+        BIND("Does not implement any MissionTask" AS ?integrityIssue)
+        FILTER NOT EXISTS {
+            ?element meg_mission:implements ?task .
+            ?task a meg_mission:MissionTask .
+        }
+    }
+}
+ORDER BY ?elementType

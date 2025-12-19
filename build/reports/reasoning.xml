@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <testsuites name="http://example.com/project/description/bundle">
   <testsuite name="Consistency">
-    <testcase name="http://example.com/project/description/bundle">
-      <failure message="Individual violates minimum cardinality restriction"><![CDATA[
-Individual violates minimum cardinality restriction
-
-// Class with restriction
-
-<http://uaontologies.com/UA_Core/UA_Information#InformationEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> [
-		<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-		<http://www.w3.org/2002/07/owl#onProperty> <http://uaontologies.com/UA_Core/UA_Information#isAbout> .
-		<http://www.w3.org/2002/07/owl#minQualifiedCardinality> 1 .
-		<http://www.w3.org/2002/07/owl#onClass> <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> .
-] .
-
-// Violating individual with conforming property values
-
-<http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisAndProcessingResourcesTasked> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> .
-
-]]></failure>
-    </testcase>
+    <testcase name="http://example.com/project/description/bundle"/>
   </testsuite>
   <testsuite name="Satisfiability">
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Objective"/>

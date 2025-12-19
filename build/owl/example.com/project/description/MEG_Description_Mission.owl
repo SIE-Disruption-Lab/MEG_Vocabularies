@@ -635,11 +635,22 @@
     
 
 
+    <!-- http://example.com/project/description/MEG_Description_Mission#dummyPhase -->
+
+
+    <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#dummyPhase">
+        <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+        <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked -->
 
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#dummyPhase"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -823,6 +834,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#humanIntelligenceOperativesEstablishedAndTasked">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#dummyPhase"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     
@@ -906,6 +918,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#intelligenceAnalysisAndProcessingResourcesTasked">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+        <UA_Information:prescribes rdf:resource="http://example.com/project/description/MEG_Description_Mission#dummyPhase"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
     

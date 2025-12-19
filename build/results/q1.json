@@ -4,19 +4,7 @@
   "results": {
     "bindings": [
       { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#preventRebelEscape" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardRebelBase" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#invadeRebelBase" } ,
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions" } ,
         "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
       } ,
       { 
@@ -24,12 +12,56 @@
         "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
       } ,
       { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportFindings" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
       } ,
       { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#exploreHothSurface" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#invadeRebelBase" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardRebelBase" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#unloadEquipment" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#disembarkTroops" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#launchTransports" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+      } ,
+      { 
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
       } ,
       { 
         "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployScoutDroids" } ,
@@ -40,24 +72,12 @@
         "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
       } ,
       { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportFindings" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
       } ,
       { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#launchTransports" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#disembarkTroops" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
-      } ,
-      { 
-        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployAttackForce" }
+        "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#exploreHothSurface" } ,
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
       }
     ]
   }

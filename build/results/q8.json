@@ -1,0 +1,50 @@
+{ "head": {
+    "vars": [ "performer" , "activity" ]
+  } ,
+  "results": {
+    "bindings": [
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireAirAttackForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireAirTransportForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireCommand" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireGroundAttackForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireScoutForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireSpaceForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer1" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer2" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer3" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelAirDefenseForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelCommand" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelEscapeTransport" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelGroundDefenseForces" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelShield" }
+      }
+    ]
+  }
+}

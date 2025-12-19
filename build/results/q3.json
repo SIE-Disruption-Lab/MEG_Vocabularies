@@ -3,31 +3,7 @@
   } ,
   "results": {
     "bindings": [
-      { 
-        "engineeringThread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" } ,
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardRebelBase" } ,
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
-      } ,
-      { 
-        "engineeringThread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" } ,
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#captureRebelLeaders" } ,
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
-      } ,
-      { 
-        "engineeringThread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" } ,
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators" } ,
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" }
-      } ,
-      { 
-        "engineeringThread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" } ,
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#invadeRebelBase" } ,
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
-      } ,
-      { 
-        "engineeringThread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses" } ,
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#preventRebelEscape" } ,
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips" }
-      }
+      
     ]
   }
 }

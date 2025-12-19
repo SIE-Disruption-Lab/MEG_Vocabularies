@@ -4,8 +4,24 @@
   "results": {
     "bindings": [
       { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment" } ,
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" }
       } ,
       { 
         "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportingFindings" } ,
@@ -16,16 +32,28 @@
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
       } ,
       { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#launchingScoutUnits" } ,
-        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective" }
       } ,
       { 
         "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuveringToLandingZone" } ,
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
       } ,
       { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#loadingTroopsAndEquipment" } ,
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" }
       }
     ]
   }

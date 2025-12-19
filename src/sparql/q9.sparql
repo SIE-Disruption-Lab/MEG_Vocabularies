@@ -1,0 +1,43 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT DISTINCT ?stakeholder ?direction ?relation ?relatedConcept ?conceptType
+WHERE {
+  # 1. Bind the specific stakeholder
+  BIND(<http://example.com/project/description/MEG_Description_Mission#legionCommander> AS ?stakeholder)
+
+  # 2. Gather Incoming and Outgoing links
+  {
+    ?stakeholder ?relation ?relatedConcept .
+    BIND("Outgoing (From Stakeholder)" AS ?direction)
+  }
+  UNION
+  {
+    ?relatedConcept ?relation ?stakeholder .
+    BIND("Incoming (To Stakeholder)" AS ?direction)
+  }
+
+  # --- FILTER 1: Remove Self-References ---
+  # Ensures we don't list the stakeholder relating to themselves (removes owl:sameAs)
+  FILTER (?stakeholder != ?relatedConcept)
+
+  # --- FILTER 2: Remove Structural Definitions (The New Fix) ---
+  # We exclude 'rdf:type' so we don't get rows saying "Commander is a Type of Thing"
+  FILTER (?relation != rdf:type)
+
+  # --- FILTER 3: Get the Concept Type ---
+  ?relatedConcept a ?conceptType .
+
+  # Remove generic top-level types from the conceptType column
+  FILTER (?conceptType != owl:Thing && ?conceptType != owl:NamedIndividual)
+
+  # --- FILTER 4: Hierarchy Collapse ---
+  # Keep only the most specific class for the related concept.
+  # (If X is both an 'Outcome' and a 'Thing', keep 'Outcome')
+  FILTER NOT EXISTS {
+    ?relatedConcept a ?subType .
+    ?subType rdfs:subClassOf+ ?conceptType .
+    FILTER (?subType != ?conceptType)
+  }
+}
