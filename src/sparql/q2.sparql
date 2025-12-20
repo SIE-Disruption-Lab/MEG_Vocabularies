@@ -6,14 +6,16 @@ PREFIX info: <http://uaontologies.com/UA_Core/UA_Information#>
 SELECT ?goal ?objective ?task
 WHERE {
     # Start with goals that prescribe the specific attackMission
-    ?goal a meg_mission:MissionGoal ;
+    ?goal a meg_mission:EnterpriseGoal ;
           info:prescribes meg_desc_mission:attackMission ;
           req:derivesRequirement ?objective .
     
-    ?objective a meg_mission:MissionObjective .
+    ?objective a meg_mission:EnterpriseObjective .
     
     # Find tasks that satisfy those objectives
     ?task a meg_mission:MissionTask ;
           req:satisfies ?objective .
 }
 ORDER BY ?goal ?objective
+
+

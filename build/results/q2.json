@@ -3,7 +3,61 @@
   } ,
   "results": {
     "bindings": [
-      
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective" }
+      } ,
+      { 
+        "goal": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#preventRebelEscape" } ,
+        "objective": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#captureOrKillRebelLeaders" } ,
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders" }
+      }
     ]
   }
 }
