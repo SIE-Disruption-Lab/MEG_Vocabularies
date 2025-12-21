@@ -13,11 +13,11 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     // Concepts
     concept Mission < StrategicPhase[
-//    	restricts some foundation:contains to MissionPhase	
+//    	restricts some foundation:contains to ActualMissionPhase	
 //    	restricts some foundation:contains to MissionScenario
     ]
 	
-	concept MissionPhase < foundation:Process[
+	concept ActualMissionPhase < foundation:Process[
 		restricts all foundation:isContainedIn to Mission
 //    	restricts some foundation:isContainedIn to Mission
     ]
@@ -31,8 +31,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 //	    restricts some implements to MissionThread
 	    restricts all foundation:contains to MissionFunction
     	restricts some foundation:contains to MissionFunction
-//    	restricts all defines to MissionPhase
-//    	restricts some defines to MissionPhase
+//    	restricts all defines to ActualMissionPhase
+//    	restricts some defines to ActualMissionPhase
     ]
     
     concept MissionThread < OperationalActivity[
@@ -70,12 +70,12 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     concept OperationalArchitecture < sys_arch:System, OperationalThing[
     	//restricts all isImplementedBy to ResourceArchitecture
     	restricts all foundation:contains to OperationalPerformer
-    	restricts all implements to MissionPhase
+    	restricts all implements to ActualMissionPhase
     ]
     
     concept ResourceArchitecture < sys_arch:System, PhysicalThing[
 //    	restricts all implements to OperationalArchitecture
-		restricts all implements to MissionPhase
+		restricts all implements to ActualMissionPhase
 		restricts all foundation:contains to CapabilityConfiguration
     ]
     
@@ -105,8 +105,8 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     
     concept EnterpriseObjective < req:Requirement[
     	restricts all req:requirementDerivedFrom to EnterpriseGoal
-//    	restricts some info:isAbout to MissionPhase
-    	restricts some info:prescribes to MissionPhase
+//    	restricts some info:isAbout to ActualMissionPhase
+    	restricts some info:prescribes to ActualMissionPhase
     ]
     
 //    concept ForceComponent < sys_arch:System, OperationalThing[
@@ -131,14 +131,14 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     	restricts some info:describes to MissionVignette
     ]
     
-    concept Outcome < foundation:Quality[
+    concept ActualOutcome < foundation:Quality[
     	restricts some req:satisfies to EnterpriseGoal
     	restricts some req:satisfies to EnterpriseObjective 
     ]
     
     concept OutcomeDescriptor < info:DescriptiveInformationEntity[
-    	restricts all info:describes to Outcome
-    	restricts some info:describes to Outcome
+    	restricts all info:describes to ActualOutcome
+    	restricts some info:describes to ActualOutcome
     	restricts all informs to Stakeholder
     	restricts some informs to Stakeholder
     ]
@@ -149,7 +149,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	
 	relation entity Defines [
 		from MissionEngineeringThread
-		to MissionPhase
+		to ActualMissionPhase
 		forward defines
 		reverse isDefinedBy
 		asymmetric

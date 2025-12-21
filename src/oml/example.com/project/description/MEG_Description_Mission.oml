@@ -13,13 +13,13 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Phase instance
-    instance attackExecutionPhase : meg_mission:MissionPhase [
+    instance attackExecutionPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn attackMission
         meg_mission:isImplementedBy hothAttackMissionArchitecture
         meg_mission:isImplementedBy planetaryInvasionMissionArchitecture
     ]
     
-    instance attackPlanningPhase : meg_mission:MissionPhase [
+    instance attackPlanningPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn attackMission
     ]
     
@@ -43,25 +43,25 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Independent Continuant
-    instance operationalPerformer1 : meg_mission:OperationalPerformer [
-    	// HUNTER ADDED THIS
-    	foundation:isContainedIn planetaryInvasionMissionArchitecture
-    ]
-    
-    instance operationalPerformer2 : meg_mission:OperationalPerformer [
-    	// HUNTER ADDED THIS
-    	foundation:isContainedIn planetaryInvasionMissionArchitecture
-    ]
-    
-    instance operationalPerformer3 : meg_mission:OperationalPerformer [
-    	// HUNTER ADDED THIS
-    	foundation:isContainedIn planetaryInvasionMissionArchitecture
-    ]
+//    instance operationalPerformer1 : meg_mission:OperationalPerformer [
+//    	// HUNTER ADDED THIS
+//    	foundation:isContainedIn planetaryInvasionMissionArchitecture
+//    ]
+//    
+//    instance operationalPerformer2 : meg_mission:OperationalPerformer [
+//    	// HUNTER ADDED THIS
+//    	foundation:isContainedIn planetaryInvasionMissionArchitecture
+//    ]
+//    
+//    instance operationalPerformer3 : meg_mission:OperationalPerformer [
+//    	// HUNTER ADDED THIS
+//    	foundation:isContainedIn planetaryInvasionMissionArchitecture
+//    ]
     
     //Mission Engineering Thread instance
    
     instance destroyKeyRebelHothDefenses : meg_mission:MissionEngineeringThread[
-    	foundation:specificallyDependentOn operationalPerformer1
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn attackPrimaryObjective
     	meg_mission:implements attackPrimaryObjective
 	    foundation:contains bombardRebelBase
@@ -93,21 +93,21 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     
     //Mission Function instance
     instance bombardRebelBase : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn capturingRebelLeaders
     	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance invadeRebelBase : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn capturingRebelLeaders
     	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance captureRebelLeaders : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn capturingRebelLeaders
     	meg_mission:implements capturingRebelLeaders
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
@@ -115,14 +115,14 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     
     // RENAMED THIS INSTANCE BECAUSE THERE IS A GOAL WITH THIS NAME
     instance preventRebelEscapeFunction : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn destroyingFleeingShips
     	meg_mission:implements destroyingFleeingShips
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance destroyShieldGenerators : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn destroyingPrimaryOjective
     	meg_mission:implements destroyingPrimaryOjective
 	    foundation:isContainedIn destroyKeyRebelHothDefenses
@@ -195,18 +195,18 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Phase instance
-    instance scoutExecutionPhase : meg_mission:MissionPhase [
+    instance scoutExecutionPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn scoutMission
     ]
     
-    instance scoutPlanningPhase : meg_mission:MissionPhase [
+    instance scoutPlanningPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn scoutMission
     ]
     
     //Mission Engineering Thread instance
    
-    instance scoutHothSurfaces : meg_mission:MissionEngineeringThread[
-    	foundation:specificallyDependentOn operationalPerformer1
+    instance scoutHothSurface : meg_mission:MissionEngineeringThread[
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn scoutPlanet
     	meg_mission:implements scoutPlanet
 	    foundation:contains deployScoutDroids
@@ -219,8 +219,8 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     
     //Mission Thread instance
     instance scoutPlanet : meg_mission:MissionThread[
-    	//event:isManifestationOf scoutHothSurfaces
-    	meg_mission:isImplementedBy scoutHothSurfaces
+    	//event:isManifestationOf scoutHothSurface
+    	meg_mission:isImplementedBy scoutHothSurface
 	    foundation:contains launchingScoutUnits
 	    foundation:contains scoutingDefenseCapabilities
 	    foundation:contains reportingFindings
@@ -230,31 +230,31 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     
     //Mission Function instance
     instance deployScoutDroids : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn launchingScoutUnits
     	meg_mission:implements launchingScoutUnits
-	    foundation:isContainedIn scoutHothSurfaces
+	    foundation:isContainedIn scoutHothSurface
     ]
     
     instance exploreHothSurface : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer3
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn scoutingDefenseCapabilities
     	meg_mission:implements scoutingDefenseCapabilities
-	    foundation:isContainedIn scoutHothSurfaces
+	    foundation:isContainedIn scoutHothSurface
     ]
     
     instance identifyRebelStructuresAndForces : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn scoutingDefenseCapabilities
     	meg_mission:implements scoutingDefenseCapabilities
-	    foundation:isContainedIn scoutHothSurfaces
+	    foundation:isContainedIn scoutHothSurface
     ]
     
     instance reportFindings : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer3
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn reportingFindings
     	meg_mission:implements reportingFindings
-	    foundation:isContainedIn scoutHothSurfaces
+	    foundation:isContainedIn scoutHothSurface
     ]
     
     //Mission Task instance
@@ -285,6 +285,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Goal instance
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////This goal does not have objectives - check with Pooja
     instance identifyRebelBaseLocation : meg_mission:EnterpriseGoal[
     	req:derivesRequirement identifyBaseForceShield //Update this
     	req:derivesRequirement identifyBaseWeapons		//Update this
@@ -293,6 +294,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     instance identifyRebelBaseDefensiveCapabilities : meg_mission:EnterpriseGoal[
+   	/////////////////////////////////////////////////////////////////////////////////////////////////////////This goal does not have objectives - check with Pooja
     	req:derivesRequirement identifyBaseForceShield 
     	req:derivesRequirement identifyBaseWeapons
     	//info:isAbout attackMission
@@ -322,17 +324,17 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     ]
     
     //Mission Phase instance
-    instance landingExecutionPhase : meg_mission:MissionPhase [
+    instance landingExecutionPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn landingMission
     ]
     
-    instance landingPlanningPhase : meg_mission:MissionPhase [
+    instance landingPlanningPhase : meg_mission:ActualMissionPhase [
         foundation:isContainedIn landingMission
     ]
     
     //Mission Engineering Thread instance
     instance deployAttackForce : meg_mission:MissionEngineeringThread[
-    	foundation:specificallyDependentOn operationalPerformer1
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn deployingAttackForce
     	meg_mission:implements deployingAttackForce
 	    foundation:contains loadEquipmentOnTransports
@@ -357,35 +359,35 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
     
     //Mission Function instance
     instance loadEquipmentOnTransports : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn loadingTroopsAndEquipment
     	meg_mission:implements loadingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance loadPersonnelOnTransports : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn loadingTroopsAndEquipment
     	meg_mission:implements loadingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance launchTransports : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn maneuveringToLandingZone
     	meg_mission:implements maneuveringToLandingZone
 	    foundation:isContainedIn deployAttackForce
     ]
     
     instance maneuverToLandingZone : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn maneuveringToLandingZone
     	meg_mission:implements maneuveringToLandingZone
 	    foundation:isContainedIn deployAttackForce
     ]
 
     instance disembarkTroops : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn disembarkingTroopsAndEquipment
     	meg_mission:implements disembarkingTroopsAndEquipment
 	    foundation:isContainedIn deployAttackForce
@@ -478,24 +480,24 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
     //Mission Function instance
     instance coordinateAirGroundAndSpaceForces : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
 		foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance maneuverToShieldGenerators : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn maneuveringToObjective
     	meg_mission:implements maneuveringToObjective
 		foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance protectEmpireGroundForces : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
 		foundation:isContainedIn destroyKeyRebelHothDefenses
     ]
     
     instance attackRebelDefensePositions : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn destroyingDefenseForces
     	meg_mission:implements destroyingDefenseForces
 		foundation:isContainedIn destroyKeyRebelHothDefenses
@@ -524,12 +526,12 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
     //Mission Thread instance
     instance weakenPlanetaryDefenses : meg_mission:MissionThread[
-	    foundation:contains bombardPlanetWithHeCanons
+	    foundation:contains bombardPlanetWithHECanons
 	    foundation:contains destroyPlanetarySpaceForce
     ]
 
     //Mission Task instance
-    instance bombardPlanetWithHeCanons : meg_mission:MissionTask[
+    instance bombardPlanetWithHECanons : meg_mission:MissionTask[
 	    foundation:isContainedIn weakenPlanetaryDefenses
     ]
     
@@ -541,7 +543,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
     //Mission Function instance for Landing Mission
     instance unloadEquipment : meg_mission:MissionFunction[
-    	foundation:specificallyDependentOn operationalPerformer2
+    	foundation:specificallyDependentOn empireForces
     	//event:manifestsIn disembarkingTroopsAndEquipment
     	meg_mission:implements disembarkingTroopsAndEquipment
 		foundation:isContainedIn deployAttackForce
@@ -553,7 +555,7 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 //		foundation:contains dummyMissionScenario
 //	]
 
-	instance dummyPhase : meg_mission:MissionPhase[
+	instance dummyPhase : meg_mission:ActualMissionPhase[
 //		foundation:isContainedIn dummyMission
 	]
 	
@@ -600,9 +602,11 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    	instance planetaryInvasionMissionArchitecture : meg_mission:OperationalArchitecture[
 		//meg_mission:isImplementedBy hothAttackMissionArchitecture
 		//foundation:contains forceComponent1
-		foundation:contains operationalPerformer1
-		foundation:contains operationalPerformer2
-		foundation:contains operationalPerformer3
+//		foundation:contains operationalPerformer1
+//		foundation:contains operationalPerformer2
+//		foundation:contains operationalPerformer3
+		foundation:contains rebelForces
+		foundation:contains empireForces
 		meg_mission:implements attackExecutionPhase
    	]
 
@@ -614,20 +618,63 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 		foundation:contains rebelOrgAndEquipment
    	]
 
-   	//Capability Configuration instances
+   	//Top-level Capability Configuration instances
    	instance empireOrgAndEquipment : meg_mission:CapabilityConfiguration[
 		//meg_mission:implements forceComponent1
 		foundation:isContainedIn hothAttackMissionArchitecture
+		foundation:contains interplanetaryAsssultGroupOrgAndEquipment
+		foundation:contains interplanetaryScoutBdeOrgAndEquipment
    	]
 
    	instance rebelOrgAndEquipment : meg_mission:CapabilityConfiguration[
 		//meg_mission:implements forceComponent1
 		foundation:isContainedIn hothAttackMissionArchitecture
    	]
+   	
+   	//Sub Capability Configurations - 1st level down
+   	instance interplanetaryAsssultGroupOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn empireOrgAndEquipment
+		foundation:contains fighterSqdnOrgAndEquipment
+		foundation:contains lightMechanizedPLTOrgAndEquipment
+		foundation:contains heavyMechanizedPLTOrgAndEquipment
+		foundation:contains infantryAssaultPLTOrgAndStructure
+		foundation:contains planetaryTransportCoOrgAndEquipment
+   	]
+   	
+   	instance interplanetaryScoutBdeOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn empireOrgAndEquipment
+   	]
+   	
+   	//Sub Capability Configurations - 2nd level down
+   	instance fighterSqdnOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn interplanetaryAsssultGroupOrgAndEquipment
+   	]
+   	
+   	instance lightMechanizedPLTOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn interplanetaryAsssultGroupOrgAndEquipment
+   	]
+   	
+   	instance heavyMechanizedPLTOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn interplanetaryAsssultGroupOrgAndEquipment
+   	]
+   	
+   	instance infantryAssaultPLTOrgAndStructure : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn interplanetaryAsssultGroupOrgAndEquipment
+   	]
+   	
+   	instance planetaryTransportCoOrgAndEquipment : meg_mission:CapabilityConfiguration[
+		//meg_mission:implements forceComponent1
+		foundation:isContainedIn interplanetaryAsssultGroupOrgAndEquipment
+   	]
+   	
 
    	//Floating Capability Configuration instance
-   	// NEED TO UPDATE THIS BECAUSE THIS IS FLOATING; NEED TO MAYBE UPDATE THE VOCAB SO THAT IT'S ALLOWED TO BE FLOATING
-   	// CAN YOU SAY A CAPABILITY CONFIGURATION CONTAINS ANOTHER CAPABILITY CONFIGURATION?
    	instance intelligenceAnalysisSystems : meg_mission:CapabilityConfiguration[
 		//meg_mission:implements forceComponent1
    	]
@@ -635,50 +682,84 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
 
    	//Operational Performer instances for Rebel Forces
+   	//Top-level Operational Performers
+   	instance rebelForces : meg_mission:OperationalPerformer[
+		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn planetaryInvasionMissionArchitecture
+		foundation:contains rebelGroundDefenseForces
+		foundation:contains rebelShield
+		foundation:contains rebelEscapeTransport
+		foundation:contains rebelAirDefenseForces
+		foundation:contains rebelCommand
+   	]
+   	
+   	instance empireForces : meg_mission:OperationalPerformer[
+		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn planetaryInvasionMissionArchitecture
+		foundation:contains empireAirAttackForces
+		foundation:contains empireGroundAttackForces
+		foundation:contains empireScoutForces
+		foundation:contains empireSpaceForces
+		foundation:contains empireCommand
+		foundation:contains empireAirTransportForces
+   	]
+   	
+   	//Sub Operational Performers
    	instance rebelGroundDefenseForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn rebelForces
    	]
 
    	instance rebelShield : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn rebelForces
    	]
 
    	instance rebelEscapeTransport : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn rebelForces
    	]
 
    	instance rebelAirDefenseForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn rebelForces
    	]
 
    	instance rebelCommand : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn rebelForces
    	]
 
 
    	//Operational Performer instances for Empire Forces
    	instance empireAirAttackForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
    	instance empireGroundAttackForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
    	instance empireScoutForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
    	instance empireSpaceForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
    	instance empireCommand : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
    	instance empireAirTransportForces : meg_mission:OperationalPerformer[
 		//foundation:isContainedIn forceComponent1
+		foundation:isContainedIn empireForces
    	]
 
 
@@ -687,7 +768,6 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
    	instance provideCanonFire : meg_mission:OperationalActivity[
 
    	]
-
 
    	instance repelHeavyArtillery : meg_mission:OperationalActivity[
 
@@ -780,16 +860,16 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 	// MIGHT HAVE FLIPPED THE IDEA OF OUTCOME AND OUTCOME DESCRIPTOR AND MIGHT HAVE DONE INFORMS RELATION WRONG
    	//Outcome instances
    	// THESE ARE WRONG FOR THE SATISFIES, NEED TO RELAX THE VOCAN RESTRICTION????????????????????????????????????????????????????????????
-   	instance hothPlanetSTC : meg_mission:Outcome[
+   	instance hothPlanetSTC : meg_mission:ActualOutcome[
 		req:satisfies destroyRebelDefenses
 		req:satisfies destroyBaseForceShield
-		foundation:specificallyDependentOn operationalPerformer3
+		foundation:specificallyDependentOn empireForces
    	]
 
-   	instance baseLocated : meg_mission:Outcome[
+   	instance baseLocated : meg_mission:ActualOutcome[
 		req:satisfies destroyRebelDefenses
 		req:satisfies destroyBaseForceShield
-		foundation:specificallyDependentOn operationalPerformer3
+		foundation:specificallyDependentOn empireForces
 		
    	]
 
@@ -830,11 +910,11 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 //    ]
 //    
 //    //Mission Phase instance
-//    instance airCampaign : meg_mission:MissionPhase [
+//    instance airCampaign : meg_mission:ActualMissionPhase [
 //        foundation:isContainedIn desertStormMission
 //    ]
 //    
-//    instance groundOffensive : meg_mission:MissionPhase [
+//    instance groundOffensive : meg_mission:ActualMissionPhase [
 //        foundation:isContainedIn desertStormMission
 //    ]
 //    
