@@ -9,6 +9,10 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 	aspect OperationalThing
 	
 	aspect PhysicalThing
+	
+	aspect OperationalContext
+	
+	aspect ConfigurationContext
 
     
     // Concepts
@@ -67,22 +71,22 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     
-    concept OperationalArchitecture < sys_arch:System, OperationalThing[
+    concept OperationalArchitecture < sys_arch:System, OperationalThing, OperationalContext[
     	//restricts all isImplementedBy to ResourceArchitecture
     	restricts all foundation:contains to OperationalPerformer
     	restricts all implements to ActualMissionPhase
     ]
     
-    concept ResourceArchitecture < sys_arch:System, PhysicalThing[
+    concept ResourceArchitecture < sys_arch:System, PhysicalThing, ConfigurationContext[
 //    	restricts all implements to OperationalArchitecture
 		restricts all implements to ActualMissionPhase
 		restricts all foundation:contains to CapabilityConfiguration
     ]
     
-    concept CapabilityConfiguration < sys_arch:System, PhysicalThing[
+    concept CapabilityConfiguration < sys_arch:System, PhysicalThing, ConfigurationContext[
 //    	restricts all implements to OperationalPerformer
 		restricts all foundation:contains to CapabilityConfiguration
-		restricts all foundation:isContainedIn to ResourceArchitecture
+		restricts all foundation:isContainedIn to ConfigurationContext
     ]
     
     concept MissionScenario < foundation:Process[
@@ -115,10 +119,10 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
 //    	restricts all isImplementedBy to CapabilityConfiguration
 //    ]
     
-    concept OperationalPerformer < sys_arch:System, OperationalThing[
+    concept OperationalPerformer < sys_arch:System, OperationalThing, OperationalContext[
 //    	restricts all foundation:isContainedIn to ForceComponent
 		restricts all foundation:contains to OperationalPerformer
-		restricts all foundation:isContainedIn to OperationalArchitecture
+		restricts all foundation:isContainedIn to OperationalContext
     ]    
     
     concept ScenarioCondition < info:DescriptiveInformationEntity[

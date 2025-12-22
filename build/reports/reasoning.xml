@@ -17,6 +17,7 @@
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ConnectsTo"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#StrategicPhase"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#HasItemFlow"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#ImmaterialEntity"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#Unit"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
@@ -25,10 +26,12 @@
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Function"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#KPP"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#ScenarioCondition"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#OperationalContext"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Information#Describes"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#Implements"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Event#OccursBefore"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Location#LocatedAt"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Person"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#Stakeholder"/>
@@ -48,7 +51,6 @@
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ExecutedBy"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Measurement#ConfidenceInterval"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Agent#Organization"/>
-    <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#HasThresholdValue"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#MissionTask"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasOrganizationalContext"/>
@@ -62,6 +64,7 @@
     <testcase name="http://uaontologies.com/UA_Core/UA_Agent#HasOutput"/>
     <testcase name="http://uaontologies.com/UA_Core/UA_Information#Model"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#KSA"/>
+    <testcase name="http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#CanOutput"/>
     <testcase name="http://www.w3.org/2002/07/owl#Thing"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant"/>
@@ -74,7 +77,6 @@
     <testcase name="http://uaontologies.com/UA_Domain/UA_Requirements#Verifies"/>
     <testcase name="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#ArchitectureDescription"/>
     <testcase name="http://example.com/project/vocabulary/MEG_Mission#Informs"/>
-    <testcase name="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Container"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentOn"/>
     <testcase name="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>

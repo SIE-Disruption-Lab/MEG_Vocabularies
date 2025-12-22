@@ -20,10 +20,6 @@
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployingAttackForce" }
       } ,
       { 
-        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons" } ,
-        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" }
-      } ,
-      { 
         "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportingFindings" } ,
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutPlanet" }
       } ,
@@ -53,6 +49,10 @@
       } ,
       { 
         "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#destroyPlanetarySpaceForce" } ,
+        "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" }
+      } ,
+      { 
+        "task": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHECanons" } ,
         "thread": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#weakenPlanetaryDefenses" }
       }
     ]

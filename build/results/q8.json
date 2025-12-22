@@ -13,6 +13,9 @@
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireCommand" }
       } ,
       { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireForces" }
+      } ,
+      { 
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireGroundAttackForces" }
       } ,
       { 
@@ -22,15 +25,6 @@
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#empireSpaceForces" }
       } ,
       { 
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer1" }
-      } ,
-      { 
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer2" }
-      } ,
-      { 
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer3" }
-      } ,
-      { 
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelAirDefenseForces" }
       } ,
       { 
@@ -38,6 +32,9 @@
       } ,
       { 
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelEscapeTransport" }
+      } ,
+      { 
+        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelForces" }
       } ,
       { 
         "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#rebelGroundDefenseForces" }

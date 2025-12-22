@@ -14,7 +14,7 @@
         "integrityIssue": { "type": "literal" , "value": "Does not implement any MissionTask" }
       } ,
       { 
-        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHeCanons" } ,
+        "element": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#bombardPlanetWithHECanons" } ,
         "elementType": { "type": "literal" , "value": "MissionTask" } ,
         "integrityIssue": { "type": "literal" , "value": "Not implemented by any MissionFunction" }
       } ,

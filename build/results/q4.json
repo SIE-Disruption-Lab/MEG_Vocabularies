@@ -3,22 +3,7 @@
   } ,
   "results": {
     "bindings": [
-      { 
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployScoutDroids" } ,
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer2" }
-      } ,
-      { 
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces" } ,
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer2" }
-      } ,
-      { 
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#exploreHothSurface" } ,
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer3" }
-      } ,
-      { 
-        "function": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportFindings" } ,
-        "performer": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#operationalPerformer3" }
-      }
+      
     ]
   }
 }

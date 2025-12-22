@@ -42,7 +42,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
-        <rdfs:range rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+        <rdfs:range rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
         <oml:relationEntity rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Defines"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ForwardRelation"/>
     </owl:ObjectProperty>
@@ -84,7 +84,7 @@
         <owl:inverseOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#defines"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
-        <rdfs:domain rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+        <rdfs:domain rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
         <rdfs:range rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
         <oml:relationBase rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Defines"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ReverseRelation"/>
@@ -134,10 +134,49 @@
     
 
 
+    <!-- http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Mission"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#ActualOutcome -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome">
+        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
     <!-- http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration -->
 
 
     <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#CapabilityConfiguration">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext"/>
         <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#PhysicalThing"/>
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
         <rdfs:subClassOf>
@@ -149,10 +188,19 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
     </owl:Class>
     
 
@@ -196,7 +244,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#prescribes"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -301,22 +349,6 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
                 <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionEngineeringThread"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
-    </owl:Class>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#MissionPhase -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#MissionPhase">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Process"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Mission"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
@@ -451,12 +483,13 @@
 
 
     <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalArchitecture">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalContext"/>
         <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalThing"/>
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://example.com/project/vocabulary/MEG_Mission#implements"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -470,10 +503,20 @@
     
 
 
+    <!-- http://example.com/project/vocabulary/MEG_Mission#OperationalContext -->
+
+
+    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalContext">
+        <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
+    </owl:Class>
+    
+
+
     <!-- http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer -->
 
 
     <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalContext"/>
         <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalThing"/>
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
         <rdfs:subClassOf>
@@ -485,7 +528,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalArchitecture"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#OperationalContext"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
@@ -498,28 +541,6 @@
 
     <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#OperationalThing">
         <oml:type rdf:resource="http://opencaesar.io/oml#Aspect"/>
-    </owl:Class>
-    
-
-
-    <!-- http://example.com/project/vocabulary/MEG_Mission#Outcome -->
-
-
-    <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#Outcome">
-        <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Foundation/UA_Foundation#Quality"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
     </owl:Class>
     
 
@@ -538,7 +559,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -550,7 +571,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Core/UA_Information#describes"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#Outcome"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>
@@ -571,12 +592,13 @@
 
 
     <owl:Class rdf:about="http://example.com/project/vocabulary/MEG_Mission#ResourceArchitecture">
+        <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ConfigurationContext"/>
         <rdfs:subClassOf rdf:resource="http://example.com/project/vocabulary/MEG_Mission#PhysicalThing"/>
         <rdfs:subClassOf rdf:resource="http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://example.com/project/vocabulary/MEG_Mission#implements"/>
-                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#MissionPhase"/>
+                <owl:allValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualMissionPhase"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

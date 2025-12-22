@@ -65,19 +65,19 @@
       } ,
       { 
         "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#deployScoutDroids" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurface" }
       } ,
       { 
         "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurface" }
       } ,
       { 
         "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#reportFindings" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurface" }
       } ,
       { 
         "missionFunction": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#exploreHothSurface" } ,
-        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurfaces" }
+        "mission": { "type": "uri" , "value": "http://example.com/project/description/MEG_Description_Mission#scoutHothSurface" }
       }
     ]
   }
