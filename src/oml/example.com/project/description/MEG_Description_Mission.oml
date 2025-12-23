@@ -857,18 +857,14 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
 
 
-	// MIGHT HAVE FLIPPED THE IDEA OF OUTCOME AND OUTCOME DESCRIPTOR AND MIGHT HAVE DONE INFORMS RELATION WRONG
    	//Outcome instances
-   	// THESE ARE WRONG FOR THE SATISFIES, NEED TO RELAX THE VOCAN RESTRICTION????????????????????????????????????????????????????????????
    	instance hothPlanetSTC : meg_mission:ActualOutcome[
-		req:satisfies destroyRebelDefenses
-		req:satisfies destroyBaseForceShield
+		req:satisfies electronicIntelligenceResourcesEstablishedAndTasked
 		foundation:specificallyDependentOn empireForces
    	]
 
    	instance baseLocated : meg_mission:ActualOutcome[
-		req:satisfies destroyRebelDefenses
-		req:satisfies destroyBaseForceShield
+		req:satisfies identifyRebelBaseLocation
 		foundation:specificallyDependentOn empireForces
 		
    	]
