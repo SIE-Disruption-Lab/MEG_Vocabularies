@@ -209,8 +209,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#baseLocated">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome"/>
-        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
-        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseLocation"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#empireForces"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>
@@ -868,8 +867,7 @@
 
     <owl:NamedIndividual rdf:about="http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC">
         <rdf:type rdf:resource="http://example.com/project/vocabulary/MEG_Mission#ActualOutcome"/>
-        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield"/>
-        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses"/>
+        <UA_Requirements:satisfies rdf:resource="http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked"/>
         <UA_Foundation:specificallyDependentOn rdf:resource="http://example.com/project/description/MEG_Description_Mission#empireForces"/>
         <oml:type rdf:resource="http://opencaesar.io/oml#ConceptInstance"/>
     </owl:NamedIndividual>

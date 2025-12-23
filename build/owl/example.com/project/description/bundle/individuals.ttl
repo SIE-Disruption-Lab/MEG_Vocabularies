@@ -206,7 +206,7 @@
         <http://uaontologies.com/UA_Core/UA_Information#prescribes>
                 <http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#isSatisfiedBy>
-                <http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces> , <http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips> , <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> , <http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective> , <http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders> , <http://example.com/project/description/MEG_Description_Mission#baseLocated> , <http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective> ;
+                <http://example.com/project/description/MEG_Description_Mission#destroyingDefenseForces> , <http://example.com/project/description/MEG_Description_Mission#destroyingFleeingShips> , <http://example.com/project/description/MEG_Description_Mission#destroyingPrimaryOjective> , <http://example.com/project/description/MEG_Description_Mission#capturingRebelLeaders> , <http://example.com/project/description/MEG_Description_Mission#maneuveringToObjective> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#requirementDerivedFrom>
                 <http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield> .
@@ -358,7 +358,7 @@ owl:topObjectProperty
         rdf:type  owl:ObjectProperty .
 
 <http://example.com/project/description/MEG_Description_Mission#rebelShield>
-        rdf:type    <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Object> , <http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://example.com/project/vocabulary/MEG_Mission#OperationalThing> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity> , owl:Thing , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://example.com/project/vocabulary/MEG_Mission#OperationalContext> ;
+        rdf:type    <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Domain/UA_SystemArchitecture#System> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Object> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://example.com/project/vocabulary/MEG_Mission#OperationalPerformer> , <http://example.com/project/vocabulary/MEG_Mission#OperationalThing> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IndependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#MaterialEntity> , owl:Thing , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://example.com/project/vocabulary/MEG_Mission#OperationalContext> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn>
                 <http://example.com/project/description/MEG_Description_Mission#rebelForces> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#rebelShield> .
@@ -455,7 +455,7 @@ owl:topObjectProperty
         <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf>
                 <http://example.com/project/description/MEG_Description_Mission#targetAreaSearched> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#satisfies>
-                <http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses> , <http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield> ;
+                <http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn>
                 <http://example.com/project/description/MEG_Description_Mission#empireForces> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> .
@@ -567,7 +567,7 @@ owl:topObjectProperty
         rdf:type         owl:Ontology ;
         rdfs:comment     "Generated by Owl Reason 2.15.0" ;
         owl:imports      <http://example.com/project/description/bundle> ;
-        owl:versionInfo  "1766427400" .
+        owl:versionInfo  "1766450115" .
 
 <http://example.com/project/vocabulary/MEG_Mission#MissionTask>
         rdf:type  owl:Class .
@@ -777,6 +777,8 @@ owl:Thing  rdf:type  owl:Class .
                 <http://example.com/project/description/MEG_Description_Mission#dummyPhase> ;
         <http://uaontologies.com/UA_Core/UA_Information#prescribes>
                 <http://example.com/project/description/MEG_Description_Mission#dummyPhase> ;
+        <http://uaontologies.com/UA_Domain/UA_Requirements#isSatisfiedBy>
+                <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#electronicIntelligenceResourcesEstablishedAndTasked> .
 
 <http://example.com/project/vocabulary/MEG_Mission#isImplementedBy>
@@ -876,7 +878,7 @@ owl:Thing  rdf:type  owl:Class .
         <http://uaontologies.com/UA_Core/UA_Information#isSubjectOf>
                 <http://example.com/project/description/MEG_Description_Mission#intelligenceExploited> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#satisfies>
-                <http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield> , <http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses> ;
+                <http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseLocation> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#specificallyDependentOn>
                 <http://example.com/project/description/MEG_Description_Mission#empireForces> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#baseLocated> .
@@ -911,7 +913,7 @@ owl:Thing  rdf:type  owl:Class .
         <http://uaontologies.com/UA_Domain/UA_Requirements#derivesRequirement>
                 <http://example.com/project/description/MEG_Description_Mission#destroyBaseWeapons> , <http://example.com/project/description/MEG_Description_Mission#destroyBaseForceShield> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#isSatisfiedBy>
-                <http://example.com/project/description/MEG_Description_Mission#baseLocated> , <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> , <http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective> ;
+                <http://example.com/project/description/MEG_Description_Mission#attackPrimaryObjective> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#destroyRebelDefenses> .
 
 <http://uaontologies.com/UA_Core/UA_Measurement#hasLowerValue>
@@ -1266,7 +1268,7 @@ owl:Thing  rdf:type  owl:Class .
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#commandEvacuation> .
 
 <http://example.com/project/description/MEG_Description_Mission#disembarkTroops>
-        rdf:type    <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , owl:Thing , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://example.com/project/vocabulary/MEG_Mission#PhysicalThing> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Function> , <http://example.com/project/vocabulary/MEG_Mission#MissionFunction> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> ;
+        rdf:type    owl:Thing , <http://uaontologies.com/UA_Foundation/UA_Foundation#SDCCarrier> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Foundation/UA_Foundation#SpecificallyDependentContinuant> , <http://example.com/project/vocabulary/MEG_Mission#PhysicalThing> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#RealizableEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Disposition> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Function> , <http://example.com/project/vocabulary/MEG_Mission#MissionFunction> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GDCCarrier> ;
         <http://example.com/project/vocabulary/MEG_Mission#implements>
                 <http://example.com/project/description/MEG_Description_Mission#disembarkingTroopsAndEquipment> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn>
@@ -1300,7 +1302,7 @@ owl:Thing  rdf:type  owl:Class .
         <http://uaontologies.com/UA_Domain/UA_Requirements#derivesRequirement>
                 <http://example.com/project/description/MEG_Description_Mission#identifyBaseWeapons> , <http://example.com/project/description/MEG_Description_Mission#identifyBaseForceShield> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#isSatisfiedBy>
-                <http://example.com/project/description/MEG_Description_Mission#scoutPlanet> ;
+                <http://example.com/project/description/MEG_Description_Mission#scoutPlanet> , <http://example.com/project/description/MEG_Description_Mission#baseLocated> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#identifyRebelBaseLocation> .
 
 <http://uaontologies.com/UA_Domain/UA_Requirements#VerificationMethod>
@@ -1323,7 +1325,7 @@ owl:Thing  rdf:type  owl:Class .
         <http://uaontologies.com/UA_Foundation/UA_Foundation#contains>
                 <http://example.com/project/description/MEG_Description_Mission#empireSpaceForces> , <http://example.com/project/description/MEG_Description_Mission#empireScoutForces> , <http://example.com/project/description/MEG_Description_Mission#empireAirAttackForces> , <http://example.com/project/description/MEG_Description_Mission#empireCommand> , <http://example.com/project/description/MEG_Description_Mission#empireGroundAttackForces> , <http://example.com/project/description/MEG_Description_Mission#empireAirTransportForces> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#hasSpecificDependent>
-                <http://example.com/project/description/MEG_Description_Mission#bombardRebelBase> , <http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces> , <http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators> , <http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction> , <http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports> , <http://example.com/project/description/MEG_Description_Mission#scoutHothSurface> , <http://example.com/project/description/MEG_Description_Mission#baseLocated> , <http://example.com/project/description/MEG_Description_Mission#deployScoutDroids> , <http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces> , <http://example.com/project/description/MEG_Description_Mission#invadeRebelBase> , <http://example.com/project/description/MEG_Description_Mission#deployAttackForce> , <http://example.com/project/description/MEG_Description_Mission#unloadEquipment> , <http://example.com/project/description/MEG_Description_Mission#disembarkTroops> , <http://example.com/project/description/MEG_Description_Mission#launchTransports> , <http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions> , <http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone> , <http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports> , <http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses> , <http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators> , <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> , <http://example.com/project/description/MEG_Description_Mission#captureRebelLeaders> , <http://example.com/project/description/MEG_Description_Mission#exploreHothSurface> , <http://example.com/project/description/MEG_Description_Mission#reportFindings> , <http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces> ;
+                <http://example.com/project/description/MEG_Description_Mission#bombardRebelBase> , <http://example.com/project/description/MEG_Description_Mission#protectEmpireGroundForces> , <http://example.com/project/description/MEG_Description_Mission#destroyShieldGenerators> , <http://example.com/project/description/MEG_Description_Mission#preventRebelEscapeFunction> , <http://example.com/project/description/MEG_Description_Mission#loadEquipmentOnTransports> , <http://example.com/project/description/MEG_Description_Mission#scoutHothSurface> , <http://example.com/project/description/MEG_Description_Mission#baseLocated> , <http://example.com/project/description/MEG_Description_Mission#identifyRebelStructuresAndForces> , <http://example.com/project/description/MEG_Description_Mission#deployScoutDroids> , <http://example.com/project/description/MEG_Description_Mission#invadeRebelBase> , <http://example.com/project/description/MEG_Description_Mission#deployAttackForce> , <http://example.com/project/description/MEG_Description_Mission#unloadEquipment> , <http://example.com/project/description/MEG_Description_Mission#disembarkTroops> , <http://example.com/project/description/MEG_Description_Mission#launchTransports> , <http://example.com/project/description/MEG_Description_Mission#attackRebelDefensePositions> , <http://example.com/project/description/MEG_Description_Mission#maneuverToLandingZone> , <http://example.com/project/description/MEG_Description_Mission#loadPersonnelOnTransports> , <http://example.com/project/description/MEG_Description_Mission#destroyKeyRebelHothDefenses> , <http://example.com/project/description/MEG_Description_Mission#maneuverToShieldGenerators> , <http://example.com/project/description/MEG_Description_Mission#hothPlanetSTC> , <http://example.com/project/description/MEG_Description_Mission#captureRebelLeaders> , <http://example.com/project/description/MEG_Description_Mission#exploreHothSurface> , <http://example.com/project/description/MEG_Description_Mission#reportFindings> , <http://example.com/project/description/MEG_Description_Mission#coordinateAirGroundAndSpaceForces> ;
         <http://uaontologies.com/UA_Foundation/UA_Foundation#isContainedIn>
                 <http://example.com/project/description/MEG_Description_Mission#planetaryInvasionMissionArchitecture> ;
         owl:sameAs  <http://example.com/project/description/MEG_Description_Mission#empireForces> .
@@ -1682,7 +1684,7 @@ owl:Nothing  rdf:type  owl:Class .
 <http://example.com/project/description/MEG_Description_Mission#captureLukeSkywalker>
         rdf:type    <http://uaontologies.com/UA_Core/UA_Information#PrescriptiveInformationEntity> , <http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective> , <http://uaontologies.com/UA_Domain/UA_Requirements#Requirement> , owl:Thing , <http://uaontologies.com/UA_Core/UA_Information#InformationEntity> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Continuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#Container> , <http://uaontologies.com/UA_Foundation/UA_Foundation#GenericallyDependentContinuant> , <http://uaontologies.com/UA_Foundation/UA_Foundation#ContainedElement> , <http://uaontologies.com/UA_Foundation/UA_Foundation#IdentifiedEntity> ;
         <http://uaontologies.com/UA_Core/UA_Information#isAbout>
-                <http://example.com/project/description/MEG_Description_Mission#landingMission> , <http://example.com/project/description/MEG_Description_Mission#landingPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#attackMission> , <http://example.com/project/description/MEG_Description_Mission#scoutExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#attackPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#planetaryInvasion> , <http://example.com/project/description/MEG_Description_Mission#airAttack> , <http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#groundAttack> , <http://example.com/project/description/MEG_Description_Mission#scoutPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#landingExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#scoutMission> ;
+                <http://example.com/project/description/MEG_Description_Mission#landingMission> , <http://example.com/project/description/MEG_Description_Mission#scoutExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#attackMission> , <http://example.com/project/description/MEG_Description_Mission#landingPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#attackPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#planetaryInvasion> , <http://example.com/project/description/MEG_Description_Mission#airAttack> , <http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#groundAttack> , <http://example.com/project/description/MEG_Description_Mission#scoutPlanningPhase> , <http://example.com/project/description/MEG_Description_Mission#landingExecutionPhase> , <http://example.com/project/description/MEG_Description_Mission#scoutMission> ;
         <http://uaontologies.com/UA_Core/UA_Information#prescribes>
                 <http://example.com/project/description/MEG_Description_Mission#attackExecutionPhase> ;
         <http://uaontologies.com/UA_Domain/UA_Requirements#requirementDerivedFrom>

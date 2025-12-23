@@ -158,13 +158,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseGoal"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#satisfies"/>
-                <owl:someValuesFrom rdf:resource="http://example.com/project/vocabulary/MEG_Mission#EnterpriseObjective"/>
+                <owl:allValuesFrom rdf:resource="http://uaontologies.com/UA_Domain/UA_Requirements#Requirement"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oml:type rdf:resource="http://opencaesar.io/oml#Concept"/>

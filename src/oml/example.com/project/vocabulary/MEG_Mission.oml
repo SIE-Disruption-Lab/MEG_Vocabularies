@@ -136,8 +136,7 @@ vocabulary <http://example.com/project/vocabulary/MEG_Mission#> as meg_mission {
     ]
     
     concept ActualOutcome < foundation:Quality[
-    	restricts some req:satisfies to EnterpriseGoal
-    	restricts some req:satisfies to EnterpriseObjective 
+    	restricts all req:satisfies to req:Requirement 
     ]
     
     concept OutcomeDescriptor < info:DescriptiveInformationEntity[

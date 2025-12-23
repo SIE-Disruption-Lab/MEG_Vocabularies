@@ -859,12 +859,12 @@ description <http://example.com/project/description/MEG_Description_Mission#> as
 
    	//Outcome instances
    	instance hothPlanetSTC : meg_mission:ActualOutcome[
-		req:satisfies electronicIntelligenceResourcesEstablishedAndTasked
+		req:satisfies electronicIntelligenceResourcesEstablishedAndTasked //Objective
 		foundation:specificallyDependentOn empireForces
    	]
 
    	instance baseLocated : meg_mission:ActualOutcome[
-		req:satisfies identifyRebelBaseLocation
+		req:satisfies identifyRebelBaseLocation //Goal
 		foundation:specificallyDependentOn empireForces
 		
    	]
